@@ -2,14 +2,14 @@
 //
 
 #include "Main.h"
-#include "Kurwat.h"
+
 #include "Drugi.h"
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
-	Kurwat();
+	cout << "Siema" << endl;
+	
 	Drugi();
 	return 0;
 }
