@@ -7,5 +7,6 @@
 #include "TabFill.h"
 #include "Display.h"
 #include "Rozmiar.h"
+#include "MergeSort.h"
 
 // TODO: W tym miejscu przywołaj dodatkowe nagłówki wymagane przez program.
