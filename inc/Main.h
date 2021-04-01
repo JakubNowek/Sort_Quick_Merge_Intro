@@ -2,7 +2,10 @@
 // lub pliki dołączane specyficzne dla projektu.
 
 #pragma once
-
 #include <iostream>
+
+#include "TabFill.h"
+#include "Display.h"
+#include "Rozmiar.h"
 
 // TODO: W tym miejscu przywołaj dodatkowe nagłówki wymagane przez program.

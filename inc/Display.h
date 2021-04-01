@@ -1,8 +1,7 @@
 #pragma once
-
 #include <iostream>
 #include <vector>
+#include "Rozmiar.h"
 using namespace std;
 
-const int ROZMIAR = 5;
-void Drugi(vector<int> toFill[], int size);
+void Display(vector<int> toDisplay[], int size);
