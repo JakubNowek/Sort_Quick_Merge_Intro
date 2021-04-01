@@ -10,6 +10,6 @@ int main()
 	vector<int> tab[ROZMIAR];
 	int size = 9;
 	TabFill(tab,size);
-	Display(tab, size);
+	Display(tab);
 	return 0;
 }
