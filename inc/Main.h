@@ -8,5 +8,4 @@
 #include "Display.h"
 #include "Rozmiar.h"
 #include "MergeSort.h"
-#include "Tablica.h"
 // TODO: W tym miejscu przywołaj dodatkowe nagłówki wymagane przez program.
