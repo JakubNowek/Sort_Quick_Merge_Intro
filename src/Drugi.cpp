@@ -1,5 +1,5 @@
 #include "Drugi.h"
 
 void Drugi() {
-	std::cout << "Druuuuuuugi" << std::endl;
+	std::cout << "Drugi" << std::endl;
 }
