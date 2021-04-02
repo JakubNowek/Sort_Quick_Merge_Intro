@@ -9,8 +9,8 @@ void Display(vector<Type> toDisplay[] ) {
 
 	for (int i = 0; i < ROZMIAR; i++) {
 		for (int j = 0; j < toDisplay[i].size(); j++) {
-			printf("%5d ", toDisplay[i][j]);				//dziala tylko dla int
-			//cout<< toDisplay[i][j]<<" ";  //dziala dla wszystkich ale brzydko wyglada
+			cout.width(6); //ustalanie szerokoœci na jakiej ma byæ wyœwietlona liczba
+			cout<<left<<toDisplay[i][j]<<" ";  // left - justowanie wyœwietlanych liczb do lewej
 		}
 		cout << endl;
 	}

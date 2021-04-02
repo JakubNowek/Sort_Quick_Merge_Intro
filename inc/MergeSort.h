@@ -1,9 +1,8 @@
 #pragma once
 #include <vector>
 #include <iostream>
-#include <Rozmiar.h>
 #include <functional>
-
+#include "Rozmiar.h"
 using namespace std;
 template <typename E/*, typename C*/> // merge-sort S
 void MergeSort(vector<E>& S/*, const C& less*/) {
