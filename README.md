@@ -1,2 +1,2 @@
 witam 
-w tym momencie pliki Display.cpp oraz TabFill.cpp s¹ niepotrzebne, bo u¿ywam szablonów, które s¹ w plikach *.h
+w tym momencie pliki Display.cpp oraz TabFill.cpp sa niepotrzebne, bo u¿ywam szablonow, ktore sa w plikach *.h

@@ -20,7 +20,7 @@ int main()
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//QuickSort(tab[i]);
 	//}
-	// 
+	 
 	cout << endl << endl;
 	Display(tab);
 
