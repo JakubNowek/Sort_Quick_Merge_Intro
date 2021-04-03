@@ -10,42 +10,47 @@ int main()
 	cout << "Siema" << endl;
 	vector<int> tab[ROZMIAR];
 	int size = 16;
-	//TabFill(tab,size);
-	//Display(tab);
-
+	TabFill(tab,size);
+	Display(tab);
+	cout << endl << endl;
 
 	/* MergeSort dla wektorów */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
 	//}
 
-
+	/* min->max */
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//QuickSort(tab[i],100);
 	//}
 
+	/* max->min */
+	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+	for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+	_backQuickSort(tab[i],100);
+	}
 
-	//cout << endl << endl;
-	//Display(tab);
+
+	Display(tab);
 
 
 
 	/* Sortowanie tablicy */
 
 
-	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
-	TabFill(Array, size);			  // wypełnianie tablicy
-	Display(Array, size);			  // wyświetlanie tablicy
-	cout << endl << endl;
-	double proc = 100;				  // procent posortowania tablicy
+	//int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
+	//TabFill(Array, size);			  // wypełnianie tablicy
+	//Display(Array, size);			  // wyświetlanie tablicy
+	//cout << endl << endl;
+	//double proc = 100;				  // procent posortowania tablicy
 
 	/* Sortowanie introspektywne (procent posortowania określany w zmiennej 'proc') */
 	//for (int i = 0; i < ROZMIAR; i++){
 	//	Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
 	//}
 	
-
+	/* min->max */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
 	//for (int i = 0; i < ROZMIAR; i++){
 	//QuickSort(Array[i], size, proc);
@@ -54,13 +59,13 @@ int main()
 
 	/* max->min */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
-	for (int i = 0; i < ROZMIAR; i++){
-	QuickSort(Array[i], size, proc);
-	}
-	/* koniec maks->min */
+	//for (int i = 0; i < ROZMIAR; i++){
+	//_backQuickSort(Array[i], size, proc);
+	//}
+	
 
 
-	Display(Array, size);
+	//Display(Array, size);
 
 	//for (int i = 0; i < ROZMIAR; i++)
 	//{
