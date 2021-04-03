@@ -10,8 +10,8 @@ int main()
 	cout << "Siema" << endl;
 	vector<int> tab[ROZMIAR];
 	int size = 16;
-	TabFill(tab,size);
-	Display(tab);
+	//TabFill(tab,size);
+	//Display(tab);
 	/* MergeSort */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
@@ -24,8 +24,8 @@ int main()
 	//}
 
 
-	cout << endl << endl;
-	Display(tab);
+	//cout << endl << endl;
+	//Display(tab);
 
 	/*
 	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
@@ -38,24 +38,25 @@ int main()
 	/* Sortowanie tablicy */
 
 
-	//int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
-	//TabFill(Array, size);			  // wypełnianie tablicy
-	//Display(Array, size);			  // wyświetlanie tablicy
-	//cout << endl << endl;
+	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
+	TabFill(Array, size);			  // wypełnianie tablicy
+	Display(Array, size);			  // wyświetlanie tablicy
+	cout << endl << endl;
+	double proc = 100;				  // procent posortowania tablicy
 
-	/* Sortowanie introspektywne */
+	/* Sortowanie introspektywne (procent posortowania określany w zmiennej 'proc') */
 	//for (int i = 0; i < ROZMIAR; i++){
-	//	Hybrid_Introspective_Sort(Array[i], size);
+	//	Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
 	//}
-	//
+	
 
-
-	/* Sortowanie introspektywne dla części tablicy */
-	//double proc = 0.75;
+	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
 	//for (int i = 0; i < ROZMIAR; i++){
-	//	Hybrid_Introspective_Sort(Array[i],proc*size);
+	//QuickSort(Array[i], size, proc);
 	//}
-	//
+
+
+
 	//Display(Array, size);
 
 	//for (int i = 0; i < ROZMIAR; i++)
