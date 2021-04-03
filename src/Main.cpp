@@ -6,13 +6,16 @@ using namespace std;
 
 int main()
 {
-	/* Sortowanie wektorow */
 	cout << "Siema" << endl;
-	vector<int> tab[ROZMIAR];
 	int size = 16;
-	TabFill(tab,size);
-	Display(tab);
-	cout << endl << endl;
+
+	/* Sortowanie wektorow */
+
+	/* Generowanie i wyświetlanie wektora */
+	//vector<int> tab[ROZMIAR];
+	//TabFill(tab,size);
+	//Display(tab);
+	//cout << endl << endl;
 
 	/* MergeSort dla wektorów */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
@@ -27,18 +30,19 @@ int main()
 
 	/* max->min */
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
-	for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
-	_backQuickSort(tab[i],100);
-	}
+	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+	//_backQuickSort(tab[i],100);
+	//}
 
 
-	Display(tab);
+	//Display(tab);
 
 
 
 	/* Sortowanie tablicy */
 
 
+	/* Generowanie i wyświetlanie tablicy */
 	//int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
 	//TabFill(Array, size);			  // wypełnianie tablicy
 	//Display(Array, size);			  // wyświetlanie tablicy
@@ -74,7 +78,7 @@ int main()
 
 
 	/*
-	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
+	TODO:	dodać liczenie czasu
 			dodać menu
 			sprawdzić jak dodać polskie znaki do README
 	*/
