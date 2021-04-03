@@ -9,9 +9,9 @@ int main()
 	/* Sortowanie wektorow */
 	cout << "Siema" << endl;
 	vector<int> tab[ROZMIAR];
-	int size = 10;
-	//TabFill(tab,size);
-	//Display(tab);
+	int size = 16;
+	TabFill(tab,size);
+	Display(tab);
 	/* MergeSort */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
@@ -19,11 +19,11 @@ int main()
 
 	/* QuickSort */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
-	//QuickSort(tab[i]);
+	QuickSort_proc(tab[0],size,25);
 	//}
 	 
 	cout << endl << endl;
-	//Display(tab);
+	Display(tab);
 
 	/*
 	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
@@ -35,15 +35,15 @@ int main()
 	/* Sortowanie tablicy */
 
 	/* Sortowanie introspektywne */
-	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
-	TabFill(Array, size);			  // wypełnianie tablicy
-	Display(Array, size);			  // wyświetlanie tablicy
-	cout << endl << endl;
+	//int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
+	//TabFill(Array, size);			  // wypełnianie tablicy
+	//Display(Array, size);			  // wyświetlanie tablicy
+	//cout << endl << endl;
 
-	for (int i = 0; i < ROZMIAR; i++){
-		Hybrid_Introspective_Sort(Array[i], size);
-	}
-	
-	Display(Array, size);
+	//for (int i = 0; i < ROZMIAR; i++){
+	//	Hybrid_Introspective_Sort(Array[i], size);
+	//}
+	//
+	//Display(Array, size);
 	return 0;
 }

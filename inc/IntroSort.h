@@ -4,15 +4,17 @@
 #include <cmath>
 using namespace std;
 
+/* Funkcja odpowiedzialna za sortowanie, ³¹cz¹ca sortowanie introspektywne i sortowanie przez wstawianie */
 template <class Type>
 void Hybrid_Introspective_Sort(Type* Array, long N)
 {
-    int maxdepth = (int)floor(2 * log(N));
+    int maxdepth = (int)floor(2 * log(N)); //maksymalna g³êbokoœæ rekurencji
     IntroSort(Array, N, maxdepth);
     Insertion_Sort(Array, N);
 
 }
 
+/* Funkcja realizuj¹ca algorytm sortowania introspektywnego */
 template <class Type>
 void IntroSort(Type* Array, long N, int M)
 {
@@ -29,6 +31,7 @@ void IntroSort(Type* Array, long N, int M)
         IntroSort(Array + i + 1, N - 1 - i, M - 1);
 }
 
+/* Funkcja odpowiedzialna za podzia³ tablicy */
 template <class Type>
 long Partition(Type* Array, long L, long R)
 {
@@ -47,6 +50,7 @@ long Partition(Type* Array, long L, long R)
     return i;
 }
 
+/* Funkcja obliczaj¹ca medianê z pierwszego , œrodkowego i ostatniego elementu tablicy */
 template <class Type>
 void MedianOfThree(Type* Array, long& L, long& R)
 {
@@ -59,6 +63,7 @@ void MedianOfThree(Type* Array, long& L, long& R)
     Exchange(Array, R / 2, R - 1);
 }
 
+/* Funkcja odpowiadaj¹ca za zamianê elementu w tablicy */
 template <class Type>
 void Exchange(Type* Array, long i, long j)
 {
@@ -68,6 +73,7 @@ void Exchange(Type* Array, long i, long j)
     Array[j] = temp;
 }
 
+/* Funkcja realizuj¹ca algorytm sortowania Heap Sort (sortowanie przez kopcowanie) dla najgorzego scenraiusza QuickSort */
 template <class Type>
 void Heap_Sort(Type* Array, long N)
 {
@@ -96,7 +102,7 @@ void Heapify(Type* Array, long i, long N)
         i = j;
     }
 }
-
+/* Funkcja realizuj¹ca algorytm sortowania przez wstawianie, u¿ywana gdy tablica jest zbyt ma³a ¿eby op³aca³o siê sortowanie szybkie*/
 template <class Type>
 void Insertion_Sort(Type* Array, long N)
 {

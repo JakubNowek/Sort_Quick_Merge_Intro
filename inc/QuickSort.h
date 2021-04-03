@@ -13,6 +13,13 @@ void QuickSort(std::vector<E>& S) {
 	QuickSortStep(S, 0, S.size()-1); // call sort utility
 }
 
+/* Quicksort sortuj¹cy czêœæ tablicy zdefiniowan¹ w procentach przez parametr 'proc' */
+template <typename E> // quick-sort S
+void QuickSort_proc(std::vector<E>& S,int size,double proc) {
+	if (S.size() <= 1) return; // already sorted
+	//cout <<endl<<S.size()<<"; size "<< size << ";  " << 0.75 * size << endl;
+	QuickSortStep(S, 0, (S.size() - 1)*(proc/100)); // call sort utility
+}
 
 template <typename E>
 void QuickSortStep(std::vector<E>& S, int a, int b) {
