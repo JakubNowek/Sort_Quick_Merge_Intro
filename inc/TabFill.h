@@ -24,7 +24,7 @@ void  TabFill(vector<SType> toFill[], int Size) {
 //przeci¹¿enie funkcji TabFill dla tablicy
 template <typename SType>
 void TabFill(SType** Array, int Size){
-
+	srand((SType)time(NULL));					/*Funkcja inicjalizuj¹ca funkcjê rand(), przy ka¿dym uruchomieniu programu uzyskujemy inn¹ sekwencjê liczb losowych*/
 	for (int i = 0; i < ROZMIAR; i++)
 	{
 		Array[i] = new SType[Size];
