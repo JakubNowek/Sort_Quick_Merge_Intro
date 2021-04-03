@@ -27,7 +27,7 @@ void TabFill(SType** Array, int Size){
 
 	for (int i = 0; i < ROZMIAR; i++)
 	{
-		Array[i] = new int[Size];
+		Array[i] = new SType[Size];
 			for (int j = 0; j < Size; j++)
 			{
 				Array[i][j] = ((rand() % RANGE) / DECIMAL);

@@ -26,19 +26,24 @@ int main()
 	//Display(tab);
 
 	/*
-	TODO:	dodać sortowanie introspektywne - jak przekazać powiększony adres wektora do funkcji
-			dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
+	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
 			dodać menu
 			sprawdzić jak dodać polskie znaki do README
 	*/
 	 
+
 	/* Sortowanie tablicy */
 
-	int** Array = new int* [ROZMIAR];
-	TabFill(Array, size);
-	Display(Array, size);
+	/* Sortowanie introspektywne */
+	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
+	TabFill(Array, size);			  // wypełnianie tablicy
+	Display(Array, size);			  // wyświetlanie tablicy
 	cout << endl << endl;
-	Hybrid_Introspective_Sort(Array[0], size);
+
+	for (int i = 0; i < ROZMIAR; i++){
+		Hybrid_Introspective_Sort(Array[i], size);
+	}
+	
 	Display(Array, size);
 	return 0;
 }

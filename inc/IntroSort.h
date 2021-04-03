@@ -4,8 +4,8 @@
 #include <cmath>
 using namespace std;
 
-template <class Item>
-void Hybrid_Introspective_Sort(Item* Array, long N)
+template <class Type>
+void Hybrid_Introspective_Sort(Type* Array, long N)
 {
     int maxdepth = (int)floor(2 * log(N));
     IntroSort(Array, N, maxdepth);
@@ -13,8 +13,8 @@ void Hybrid_Introspective_Sort(Item* Array, long N)
 
 }
 
-template <class Item>
-void IntroSort(Item* Array, long N, int M)
+template <class Type>
+void IntroSort(Type* Array, long N, int M)
 {
     long i;
     if (M <= 0)
@@ -29,8 +29,8 @@ void IntroSort(Item* Array, long N, int M)
         IntroSort(Array + i + 1, N - 1 - i, M - 1);
 }
 
-template <class Item>
-long Partition(Item* Array, long L, long R)
+template <class Type>
+long Partition(Type* Array, long L, long R)
 {
     long i, j;
     if (R >= 3)
@@ -47,8 +47,8 @@ long Partition(Item* Array, long L, long R)
     return i;
 }
 
-template <class Item>
-void MedianOfThree(Item* Array, long& L, long& R)
+template <class Type>
+void MedianOfThree(Type* Array, long& L, long& R)
 {
     if (Array[++L - 1] > Array[--R])
         Exchange(Array, L - 1, R);
@@ -59,17 +59,17 @@ void MedianOfThree(Item* Array, long& L, long& R)
     Exchange(Array, R / 2, R - 1);
 }
 
-template <class Item>
-void Exchange(Item* Array, long i, long j)
+template <class Type>
+void Exchange(Type* Array, long i, long j)
 {
-    Item temp;
+    Type temp;
     temp = Array[i];
     Array[i] = Array[j];
     Array[j] = temp;
 }
 
-template <class Item>
-void Heap_Sort(Item* Array, long N)
+template <class Type>
+void Heap_Sort(Type* Array, long N)
 {
     long i;
     for (i = N / 2; i > 0; --i)
@@ -81,8 +81,8 @@ void Heap_Sort(Item* Array, long N)
     }
 }
 
-template <class Item>
-void Heapify(Item* Array, long i, long N)
+template <class Type>
+void Heapify(Type* Array, long i, long N)
 {
     long j;
     while (i <= N / 2)
@@ -97,11 +97,11 @@ void Heapify(Item* Array, long i, long N)
     }
 }
 
-template <class Item>
-void Insertion_Sort(Item* Array, long N)
+template <class Type>
+void Insertion_Sort(Type* Array, long N)
 {
     long i, j;
-    Item temp;
+    Type temp;
     for (i = 1; i < N; ++i)
     {
         temp = Array[i];
