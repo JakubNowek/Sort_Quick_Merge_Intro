@@ -12,13 +12,15 @@ int main()
 	int size = 16;
 	//TabFill(tab,size);
 	//Display(tab);
-	/* MergeSort */
+
+
+	/* MergeSort dla wektorów */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
 	//}
 
 
-	/* QuickSort */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//QuickSort(tab[i],100);
 	//}
@@ -27,13 +29,7 @@ int main()
 	//cout << endl << endl;
 	//Display(tab);
 
-	/*
-	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
-			dodać menu
-			sprawdzić jak dodać polskie znaki do README
-	*/
 
-	/***********************************************************************************************************************************************************8/
 
 	/* Sortowanie tablicy */
 
@@ -55,13 +51,18 @@ int main()
 	//QuickSort(Array[i], size, proc);
 	//}
 
-
-
 	//Display(Array, size);
 
 	//for (int i = 0; i < ROZMIAR; i++)
 	//{
 	//	delete Array[i];
 	//}
+
+
+	/*
+	TODO:	dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
+			dodać menu
+			sprawdzić jak dodać polskie znaki do README
+	*/
 	return 0;
 }
