@@ -51,7 +51,16 @@ int main()
 	//QuickSort(Array[i], size, proc);
 	//}
 
-	//Display(Array, size);
+
+	/* max->min */
+	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
+	for (int i = 0; i < ROZMIAR; i++){
+	QuickSort(Array[i], size, proc);
+	}
+	/* koniec maks->min */
+
+
+	Display(Array, size);
 
 	//for (int i = 0; i < ROZMIAR; i++)
 	//{
