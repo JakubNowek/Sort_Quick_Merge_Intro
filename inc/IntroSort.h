@@ -14,15 +14,6 @@ void Hybrid_Introspective_Sort(Type* Array, long N)
 
 }
 
-//template <class Type>
-//void Hybrid_Introspective_Sort_proc(Type* Array, long N)
-//{
-//    int maxdepth = (int)floor(2 * log(N)); //maksymalna g³êbokoœæ rekurencji
-//    IntroSort(Array, N, maxdepth);
-//    Insertion_Sort(Array, N);
-//
-//}
-
 /* Funkcja realizuj¹ca algorytm sortowania introspektywnego */
 template <class Type>
 void IntroSort(Type* Array, long N, int M)

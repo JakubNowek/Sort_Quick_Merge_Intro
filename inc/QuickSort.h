@@ -7,17 +7,10 @@
 using namespace std;
 
 
+/* Quicksort sortuj¹cy tablicê lub czêœæ tablicy zdefiniowan¹ w procentach przez parametr 'proc' */
 template <typename E> // quick-sort S
-void QuickSort(std::vector<E>& S) {
+void QuickSort(std::vector<E>& S, double proc) {
 	if (S.size() <= 1) return; // already sorted
-	QuickSortStep(S, 0, S.size()-1); // call sort utility
-}
-
-/* Quicksort sortuj¹cy czêœæ tablicy zdefiniowan¹ w procentach przez parametr 'proc' */
-template <typename E> // quick-sort S
-void QuickSort_proc(std::vector<E>& S,double proc) {
-	if (S.size() <= 1) return; // already sorted
-	//cout <<endl<<S.size()<<"; size "<< size << ";  " << 0.75 * size << endl;
 	QuickSortStep(S, 0, (S.size() - 1)*(proc/100)); // call sort utility
 }
 
