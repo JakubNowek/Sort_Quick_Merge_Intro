@@ -10,8 +10,8 @@ int main()
 	cout << "Siema" << endl;
 	vector<int> tab[ROZMIAR];
 	int size = 10;
-	TabFill(tab,size);
-	Display(tab);
+	//TabFill(tab,size);
+	//Display(tab);
 	/* MergeSort */
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
@@ -37,6 +37,8 @@ int main()
 	int** Array = new int* [ROZMIAR];
 	TabFill(Array, size);
 	Display(Array, size);
-
+	cout << endl << endl;
+	Hybrid_Introspective_Sort(Array[0], size);
+	Display(Array, size);
 	return 0;
 }
