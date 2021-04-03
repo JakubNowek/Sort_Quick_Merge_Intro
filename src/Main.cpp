@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+	/* Sortowanie wektorow */
 	cout << "Siema" << endl;
 	vector<int> tab[ROZMIAR];
 	int size = 10;
@@ -22,7 +23,20 @@ int main()
 	//}
 	 
 	cout << endl << endl;
-	Display(tab);
+	//Display(tab);
+
+	/*
+	TODO:	dodać sortowanie introspektywne - jak przekazać powiększony adres wektora do funkcji
+			dodać opcję zmiany sortowania od max->min (wystarczy dla jednego)
+			dodać menu
+			sprawdzić jak dodać polskie znaki do README
+	*/
+	 
+	/* Sortowanie tablicy */
+
+	int** Array = new int* [ROZMIAR];
+	TabFill(Array, size);
+	Display(Array, size);
 
 	return 0;
 }

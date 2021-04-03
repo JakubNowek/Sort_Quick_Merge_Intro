@@ -7,7 +7,7 @@ project ("Main")
 include_directories(inc)
 file(GLOB SOURCE "src/*.cpp" "inc/*.h")
 # Dodaj źródło do pliku wykonywalnego tego projektu.
-add_executable( ${PROJECT_NAME} ${SOURCE}  "inc/TabFill.h"  "inc/Display.h"  "inc/Rozmiar.h" "inc/MergeSort.h"    "inc/QuickSort.h")
+add_executable( ${PROJECT_NAME} ${SOURCE}  "inc/TabFill.h"  "inc/Display.h"  "inc/Rozmiar.h" "inc/MergeSort.h"    "inc/QuickSort.h" "inc/IntroSort.h")
 
 # TODO: Dodaj testy i zainstaluj elementy docelowe w razie potrzeby.
 

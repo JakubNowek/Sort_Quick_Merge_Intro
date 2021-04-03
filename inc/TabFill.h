@@ -20,3 +20,18 @@ void  TabFill(vector<SType> toFill[], int Size) {
 		}
 	}
 }
+
+//przeci¹¿enie funkcji TabFill dla tablicy
+template <typename SType>
+void TabFill(SType** Array, int Size){
+
+	for (int i = 0; i < ROZMIAR; i++)
+	{
+		Array[i] = new int[Size];
+			for (int j = 0; j < Size; j++)
+			{
+				Array[i][j] = ((rand() % RANGE) / DECIMAL);
+			}
+	}
+
+}

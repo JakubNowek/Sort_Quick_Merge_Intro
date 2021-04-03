@@ -9,5 +9,6 @@
 #include "Rozmiar.h"
 #include "MergeSort.h"
 #include "Quicksort.h"
+#include "IntroSort.h"
 
 // TODO: W tym miejscu przywołaj dodatkowe nagłówki wymagane przez program.
