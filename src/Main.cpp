@@ -44,9 +44,9 @@ int main()
 	//czas_k = clock() - czas_0;
 	//cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 
-
-
 	//Display(tab);
+
+
 
 
 
@@ -89,23 +89,28 @@ int main()
 	//czas_k = clock()-czas_0;
 	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 
-
-
-	
-
+	/* min->max */
+	/*MergeSort dla tablicy*/
+	//czas_0 = clock();
+	//for (int i = 0; i < ROZMIAR; i++){
+	//MergeSort(Array[i],0,size-1);
+	//}
+	//czas_k = clock()-czas_0;
+	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 
 	//Display(Array, size);
 
-	//for (int i = 0; i < ROZMIAR; i++)
-	//{
-	//	delete Array[i];
-	//}
+
 
 
 	/*
-	TODO:	dodać liczenie czasu
-			dodać menu
+	TODO:	dodać menu
 			sprawdzić jak dodać polskie znaki do README
 	*/
+
+	for (int i = 0; i < ROZMIAR; i++)
+	{
+		delete Array[i];
+	}
 	return 0;
 }

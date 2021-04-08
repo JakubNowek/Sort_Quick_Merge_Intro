@@ -33,7 +33,7 @@ void QuickSortStep(std::vector<E>& S, int a, int b) {
 	QuickSortStep(S, l + 1, b);
 }
 
-/* QuickSort dla wektorów sortuj¹cy min->max*/
+/* QuickSort dla wektorów sortuj¹cy max->min*/
 ///* Quicksort sortuj¹cy tablicê lub czêœæ tablicy zdefiniowan¹ w procentach przez parametr 'proc' */
 template <typename E> // quick-sort S
 void _backQuickSort(std::vector<E>& S, double proc) {
@@ -57,6 +57,7 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b) {
 	_backQuickSortStep(S, a, l - 1); // recur on both sides
 	_backQuickSortStep(S, l + 1, b);
 }
+
 
 /* Tablice */
 
