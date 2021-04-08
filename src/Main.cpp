@@ -18,8 +18,9 @@ int main()
 	//Display(tab);
 	cout << endl << endl;
 
-	/* max->min */			    
+	/* max->min */	
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+	//cout << " Tablice posortowane max->min za pomocą OuickSort (wektory)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//_backQuickSort(tab[i],100);
 	//}
@@ -27,6 +28,7 @@ int main()
 
 	/* min->max */
 	/* MergeSort dla wektorów */
+	//cout << " Tablice posortowane min->max za pomocą MergeSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
@@ -37,6 +39,7 @@ int main()
 
 	/* min->max */
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+	//cout << " Tablice posortowane min->max za pomocą OuickSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//QuickSort(tab[i],proc);
@@ -62,6 +65,7 @@ int main()
 
 	/* max->min */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
+	//cout << " Tablice posortowana max->min za pomocą OuickSort (tablice*)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){
 	//_backQuickSort(Array[i], size, proc);
 	//}
@@ -69,6 +73,7 @@ int main()
 
 	/* min->max */
 	/* Sortowanie introspektywne (procent posortowania określany w zmiennej 'proc') */
+	//cout << " Tablice posortowana min->max za pomocą IntroSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//	Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
@@ -82,6 +87,7 @@ int main()
 
 	/* min->max */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
+	//cout << " Tablice posortowana min->max za pomocą OuickSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//QuickSort(Array[i], size, proc);
@@ -91,6 +97,7 @@ int main()
 
 	/* min->max */
 	/*MergeSort dla tablicy*/
+	//cout << " Tablice posortowana min->max za pomocą MergeSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//MergeSort(Array[i],0,size-1);
