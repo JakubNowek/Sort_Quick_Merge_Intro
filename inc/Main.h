@@ -10,5 +10,5 @@
 #include "MergeSort.h"
 #include "Quicksort.h"
 #include "IntroSort.h"
-
+#include <ctime>
 // TODO: W tym miejscu przywołaj dodatkowe nagłówki wymagane przez program.
