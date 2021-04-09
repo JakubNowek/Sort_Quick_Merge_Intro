@@ -7,20 +7,61 @@ using namespace std;
 int main()
 {
 	cout << "Siema" << endl;
-	int size = 10000;
-	double proc = 100;				  // procent posortowania tablicy
+	int size = 15;
+	double proc = 100;	 // procent posortowania tablicy
 	double czas_0 = 0, czas_k = 0;
-	/* Sortowanie wektorow */
+
 
 	/* Generowanie i wyświetlanie wektora */
 	vector<int> tab[ROZMIAR];
 	TabFill(tab,size);
 	//Display(tab);
+	//cout << endl << endl;
+
+	/* Generowanie i wyświetlanie tablicy */
+	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
+	TabFill(Array, size);			  // wypełnianie tablicy
+	//Display(Array, size);
 	cout << endl << endl;
 
-	/* max->min */	
+
+	/*Menu*/
+	//char choice[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
+	//cout << endl << endl << "Witaj kliencie sortowni!" << endl;
+	//while (choice[0] != '0')
+	//{
+
+	//	cout << "\nCo chcesz zrobic? :" << endl;
+	//	cout << "  1 - Obrot  " << endl;
+	//	cout << "  2 - Przemiesc sie  " << endl;
+	//	cout << "  0 - Katapulta (szybkie wysiadanie) " << endl;
+	//	cout << "Twoj wybor: ";
+	//	cin >> choice[0];
+	//	cout << endl << "Wybrales opcje: " << choice[0] << endl;
+
+	//	switch (choice[0])
+	//	{
+	//	case '1': cout << "Podaj kat:  ";
+	//		
+	//		break;
+	//	case '2': cout << "Podaj odleglosc :  ";
+	//		break;
+	//	case '0':  cout << endl << "Ewakuacja" << endl;
+
+
+	//	default: cout << "NIEROZPOZNANO" << endl;
+	//		break;
+	//	}
+	//}
+
+
+
+	/*----------------------------------------------------Sortowanie wektorow------------------------------------------------------------------- */
+
+
+	/* MAX->MIN */	
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
-	//cout << " Tablice posortowane max->min za pomocą OuickSort (wektory)" << endl;
+	//cout << " Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//_backQuickSort(tab[i],100);
 	//}
@@ -28,7 +69,7 @@ int main()
 
 	/* min->max */
 	/* MergeSort dla wektorów */
-	//cout << " Tablice posortowane min->max za pomocą MergeSort (wektory)" << endl;
+	//cout << "Tablice posortowane min->max za pomoca MergeSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//MergeSort(tab[i]);
@@ -39,7 +80,7 @@ int main()
 
 	/* min->max */
 	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
-	//cout << " Tablice posortowane min->max za pomocą OuickSort (wektory)" << endl;
+	//cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//QuickSort(tab[i],proc);
@@ -49,23 +90,21 @@ int main()
 
 	//Display(tab);
 
+	//SortCheck(tab);
 
 
 
+/*----------------------------------------------------Sortowanie tablic*------------------------------------------------------------------- */
 
-	/* Sortowanie tablicy */
 
 
-	/* Generowanie i wyświetlanie tablicy */
-	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
-	TabFill(Array, size);			  // wypełnianie tablicy
 	//Display(Array, size);			  // wyświetlanie tablicy
-	cout << endl << endl;
+	
 	
 
-	/* max->min */
+	/* MAX->MIN */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
-	//cout << " Tablice posortowana max->min za pomocą OuickSort (tablice*)" << endl;
+	//cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){
 	//_backQuickSort(Array[i], size, proc);
 	//}
@@ -73,7 +112,7 @@ int main()
 
 	/* min->max */
 	/* Sortowanie introspektywne (procent posortowania określany w zmiennej 'proc') */
-	//cout << " Tablice posortowana min->max za pomocą IntroSort (tablice*)" << endl;
+	//cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//	Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
@@ -82,12 +121,9 @@ int main()
 	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 
 
-
-
-
 	/* min->max */
 	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
-	//cout << " Tablice posortowana min->max za pomocą OuickSort (tablice*)" << endl;
+	//cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//QuickSort(Array[i], size, proc);
@@ -97,7 +133,7 @@ int main()
 
 	/* min->max */
 	/*MergeSort dla tablicy*/
-	//cout << " Tablice posortowana min->max za pomocą MergeSort (tablice*)" << endl;
+	//cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
 	//MergeSort(Array[i],0,size-1);
@@ -107,17 +143,20 @@ int main()
 
 	//Display(Array, size);
 
+	//SortCheck(Array, size);
+
 
 
 
 	/*
 	TODO:	dodać menu
-			sprawdzić jak dodać polskie znaki do README
 	*/
 
-	for (int i = 0; i < ROZMIAR; i++)
-	{
+	/* Usuwanie tablic* */
+	for (int i = 0; i < ROZMIAR; i++){
 		delete Array[i];
 	}
+
+
 	return 0;
 }

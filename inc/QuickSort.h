@@ -91,7 +91,7 @@ void QuickSortStep(E* S, int a, int b) {
 template <typename E> // quick-sort S
 void _backQuickSort(E* S, int size, double proc) {
 	if (size <= 1) return; // already sorted
-	QuickSortStep(S, 0, (size-1) * (proc / 100)); // call sort utility
+	_backQuickSortStep(S, 0, (size-1) * (proc / 100)); // call sort utility
 }
 
 template <typename E>
