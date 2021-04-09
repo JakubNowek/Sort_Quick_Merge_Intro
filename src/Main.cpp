@@ -26,33 +26,53 @@ int main()
 
 
 	/*Menu*/
-	//char choice[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
-	//cout << endl << endl << "Witaj kliencie sortowni!" << endl;
-	//while (choice[0] != '0')
-	//{
+	char choice[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
+	cout << endl << endl << "Witaj kliencie sortowni!" << endl;
+	while (choice[0] != '0')
+	{
+	
+		cout << "\nJakiego sortowanie Cie interesuje ? :" << endl;
+		cout << "  1 - QuickSort  " << endl;
+		cout << "  2 - MergeSort  " << endl;
+		cout << "  3 - IntroSort  " << endl;
+		cout << "  0 - Wypusc mnie!!!! " << endl;
+		cout << "Twoj wybor: ";
+		cin >> choice[0];
+		cout << endl << "Wybrales opcje: " << choice[0] << endl;
+	
+		switch (choice[0])
+		{
+		case '1':	while (choice[0] != 'q')
+					{	
+						cout << "\nDzialamy na wektorach czy tablicach?"<<endl;
+						cout << "  1 - Wektory  " << endl;
+						cout << "  2 - Tablice  " << endl;
+						cout << "  q - Cofnij  " << endl;
+						cout << "Twoj wybor: ";
+						cin >> choice[0];
+						cout << endl << "Wybrales opcje: " << choice[0] << endl;
+					
+						switch (choice[0])
+						{
+						case '1':   /*quick wektory*/cout<<"Chcialbys"<<endl; break;
+						case '2':   /*quick tablice*/cout << "Nie ma takiej opcji pajacu"<<endl; break;
+						case 'q':   cout << "Cofanie" << endl; break;
+						default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
+						}
+					}
 
-	//	cout << "\nCo chcesz zrobic? :" << endl;
-	//	cout << "  1 - Obrot  " << endl;
-	//	cout << "  2 - Przemiesc sie  " << endl;
-	//	cout << "  0 - Katapulta (szybkie wysiadanie) " << endl;
-	//	cout << "Twoj wybor: ";
-	//	cin >> choice[0];
-	//	cout << endl << "Wybrales opcje: " << choice[0] << endl;
+			break;
 
-	//	switch (choice[0])
-	//	{
-	//	case '1': cout << "Podaj kat:  ";
-	//		
-	//		break;
-	//	case '2': cout << "Podaj odleglosc :  ";
-	//		break;
-	//	case '0':  cout << endl << "Ewakuacja" << endl;
-
-
-	//	default: cout << "NIEROZPOZNANO" << endl;
-	//		break;
-	//	}
-	//}
+			case '2': cout << "Podaj odleglosc :  ";
+			break;
+			case '0':  cout << endl << "Ewakuacja" << endl;
+			break;
+			case 'q':  ;
+			break;
+	
+			default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
+		}
+	}
 
 
 
