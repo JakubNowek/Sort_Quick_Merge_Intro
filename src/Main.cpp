@@ -97,6 +97,7 @@ int main()
 										default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 									}
 								}
+							choice_3[0] = ' ';
 							break;
 
 							case '2':   /*quick tablice*/
@@ -139,11 +140,17 @@ int main()
 									default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 									}
 								}
+							choice_3[0] = ' ';
 							break;
-							case '0':   cout << "Cofanie" << endl; break;
+
+							case '0':   cout << "Cofanie" << endl; 
+							choice_3[0] = ' '; 
+							break;
+
 							default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 						}
 					}
+			choice_2[0] = ' ';
 			break;
 
 			case '2':	while (choice_2[0] != '0') 							/* MergeSort */
@@ -199,6 +206,7 @@ int main()
 						default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 						}
 					}
+				choice_3[0] = ' ';
 				break;
 
 				case '2':   /*quick tablice*/
@@ -241,14 +249,17 @@ int main()
 						default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 						}
 					}
+				choice_3[0] = ' ';
 				break;
 
 				case '0':   cout << "Cofanie" << endl;
+				choice_3[0] = ' ';
 				break;
 
 				default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 				}
 			}
+			choice_2[0] = ' ';
 			break;
 
 			case '3':   while (choice_3[0] != '0')							/*Introsort*/
@@ -290,9 +301,11 @@ int main()
 					default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 					}
 				}
+			choice_2[0] = ' ';
 			break;
 
 			case '0':  cout << endl << "Ewakuacja" << endl;
+			choice_2[0] = ' ';
 			break;
 	
 			default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
