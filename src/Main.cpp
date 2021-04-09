@@ -26,9 +26,9 @@ int main()
 
 
 	/*Menu*/
-	char choice_1[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
-	char choice_2[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
-	char choice_3[2] = " "; //tablica znakow zapisujaca wybor uzytkownika
+	char choice_1[2] = " "; //tablica znakow zapisujaca wybor uzytkownika poziom 1
+	char choice_2[2] = " "; //tablica znakow zapisujaca wybor uzytkownika poziom 2
+	char choice_3[2] = " "; //tablica znakow zapisujaca wybor uzytkownika poziom 3
 	cout << endl << endl << "Witaj kliencie sortowni!" << endl;
 	while (choice_1[0] != '0')  /*Poczatek pierwszego switcha*/
 	{
@@ -56,8 +56,8 @@ int main()
 					
 						switch (choice_2[0])
 						{
-							case '1':   /*quick wektory*/cout<<"Quick-Sort - Wektory"<<endl;
-								while (choice_3[0] != '0') /*Poczatek trzeciego switcha*/
+							case '1':   /* quick wektor y*/cout<<"Quick-Sort - Wektory"<<endl;
+								while (choice_3[0] != '0') /* Poczatek trzeciego switcha */
 								{
 									cout << "\nJakie tablice chcesz sortowac?" << endl;
 									cout << "  1 - Zapelnione losowo  " << endl;
@@ -73,19 +73,22 @@ int main()
 									case '1': cout << "Zapelnianie losowe  " << endl;
 											/* zapelnianie wektorow funkcja TabFill */
 											/* sortowanie wektorow  za pomoca quicksorta */
+											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 										break;
 										case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
 											cin >> proc; cout << endl;
 											/* zapelnianie wektorow funkcja TabFill */
 											/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 											cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
-											/*sortowanie ponowne posortowanej już tablicy za pomoca quicksorta */
+											/* sortowanie ponowne posortowanej już tablicy za pomoca quicksorta */
+											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 										break;
 										case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci"<<endl;
 											/* zapelnianie wektorow funkcja TabFill */
 											/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
 											cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-											/*sortowanie ponowne posortowanych już wektorow za pomoca quicksorta */
+											/* sortowanie ponowne posortowanych już wektorow za pomoca quicksorta */
+											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 										break;
 										case '0': cout << "Cofanie  ";
 										break;
@@ -93,9 +96,13 @@ int main()
 									}
 								}
 							break;
-						case '2':   /*quick tablice*/cout << "Quick-Sort - Tablice"<<endl; break;
-						case '0':   cout << "Cofanie" << endl; break;
-						default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
+
+
+							case '2':   /*quick tablice*/cout << "Quick-Sort - Tablice"<<endl;
+
+							break;
+							case '0':   cout << "Cofanie" << endl; break;
+							default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 						}
 					}
 
