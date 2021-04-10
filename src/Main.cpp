@@ -130,7 +130,7 @@ int main()
 											for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 											_backQuickSort(tab[i],100);
 											}
-											cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
+											cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 											SortCheck(tab);
 
@@ -223,7 +223,7 @@ int main()
 										for (int i = 0; i < ROZMIAR; i++){
 										_backQuickSort(Array[i], size, proc);
 										}
-										cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
+										cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 										SortCheck(Array,size);
 
@@ -334,7 +334,7 @@ int main()
 							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 							_backQuickSort(tab[i],100);
 							}
-							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
+							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 							SortCheck(tab);
 							/* sortowanie ponowne posortowanych już wektorow za pomoca mergesorta */								
@@ -423,7 +423,7 @@ int main()
 							for (int i = 0; i < ROZMIAR; i++){
 							_backQuickSort(Array[i], size, proc);
 							}
-							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
+							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 							SortCheck(Array, size);
 							/* sortowanie ponowne posortowanych już tablic za pomoca mergesorta */							
@@ -522,7 +522,7 @@ int main()
 						for (int i = 0; i < ROZMIAR; i++){
 						_backQuickSort(Array[i], size, proc);
 						}
-						cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
+						cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 						SortCheck(Array, size);
 						/* sortowanie ponowne posortowanych już tablic za pomoca introsorta */							
