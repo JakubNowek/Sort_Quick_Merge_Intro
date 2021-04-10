@@ -4,37 +4,84 @@
 #include <functional>
 #include "Rozmiar.h"
 #include "Exchange.h"
-//using namespace std;
 
+
+/*nag³ówki*/
+
+
+/*funkcje dla wektorów*/
+/**
+ * @brief - funkcja realizuj¹ca algorytm sortowania przez scalanie na wektorach 
+ * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param S - tablica wektorów
+*/
+template <typename E> // merge-sort S
+void MergeSort(std::vector<E>& S);
+
+/**
+ * @brief funkcja odpowiedzialna za ³¹czenie podzbiorów
+ * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param in - pocz¹tkowy wektor wejœciowy
+ * @param out - pocz¹tkowy wektor wyjœciowy
+ * @param b - zmienna przechowuj¹ca pocz¹tek pierwszego podzbioru
+ * @param m - zmienna przechowuj¹ca pocz¹tek drugiego podzbioru
+*/
+template <typename E>
+void Merge(std::vector<E>& in, std::vector<E>& out, int b, int m);
+
+/* funkcje dla tablic  */
+/**
+ * @brief przeci¹¿enie funkcji MergeSort dla tablic, funkcja realizuj¹ca algorytm sortowania przez scalanie
+ * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param tab - tablica dynamiczna
+ * @param l - zmienna przechowuj¹ca indeks pierwszego elementu tablicy dynamicznej
+ * @param r - zmienna przechowuj¹ca indeks ostatniego elementu tablicy dynamicznej (rozmiar - 1)
+*/
+template <typename E> // quick-sort S
+void MergeSort(E* tab, int l, int r);
+
+/**
+ * @brief funkcja odpowiedzialna za ³¹czenie podzbiorów
+ * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param tab - tablica dynamiczna
+ * @param l - zmienna przechowuj¹ca indeks pierwszego elementu tablicy dynamicznej
+ * @param m - rozmiar podzbioru
+ * @param r - zmienna przechowuj¹ca indeks ostatniego elementu tablicy dynamicznej (rozmiar - 1)
+*/
+template <typename E>
+void Merge(E* tab, int l, int m, int r);
+
+
+/*rozwiniêcia nag³ówków funkcji*/
 
 template <typename E> // merge-sort S
-void MergeSort(std::vector<E>& S/*, const C& less*/) {
+void MergeSort(std::vector<E>& S) {
 	typedef std::vector<E> vect;
 	int n = S.size();
-	vect v1(S); vect* in = &v1; // initial input vector
-	vect v2(n); vect* out = &v2; // initial output vector
-	for (int m = 1; m < n; m *= 2) { // list sizes doubling
-		for (int b = 0; b < n; b += 2 * m) { // beginning of list
-			Merge(*in, *out, b, m); // merge sublists
+
+	// Wektory pomocnicze
+	vect v1(S); vect* in = &v1; // pocz¹tkowy wektor wejœciowy
+	vect v2(n); vect* out = &v2; // poczatkowy wektor wyjœciowy
+	for (int m = 1; m < n; m *= 2) { // podwajanie rozmiaru podzbiorów
+		for (int b = 0; b < n; b += 2 * m) { // pocz¹tek podzbioru 
+			Merge(*in, *out, b, m); // scalanie podzbiorów
 		}
-		std::swap(in, out); // swap input with output
+		std::swap(in, out); // zamiana wektora wejœciowego z wyjœciowym
 	}
-	S = *in; // copy sorted array to S
+	S = *in; // przepisanie posortowanego wektora do wektora podanego do funkcji
 }
 
 
-
-// merge in[b. .b+m-1] and in[b+m. .b+2*m-1]
-template <typename E/*, typename C*/>
+template <typename E>
 void Merge(std::vector<E>& in, std::vector<E>& out, int b, int m) {
-	int i = b; // index into run #1
-	int j = b + m; // index into run #2
+	int i = b; // pocz¹tek pierwszego podzbioru
+	int j = b + m; // pocz¹tek drugiego podzbioru
 	int n = in.size();
-	int e1 = std::min(b + m, n); // end of run #1
-	int e2 = std::min(b + 2 * m, n); // end of run #2
+	int e1 = std::min(b + m, n); // koniec pierwszego podzbiory
+	int e2 = std::min(b + 2 * m, n); // koniec drugiego podzbioru
 	int k = b;
 	while ((i < e1) && (j < e2)) {
-		if (!(in[j] <= in[i])) // append smaller to S
+		if (!(in[j] <= in[i])) // przy³¹cz mniejszy do S
 		{
 			out[k++] = in[i++];
 		}
@@ -43,31 +90,26 @@ void Merge(std::vector<E>& in, std::vector<E>& out, int b, int m) {
 			out[k++] = in[j++];
 		}
 	}
-	while (i < e1) { // copy rest of run 1 to S
+	while (i < e1) { // jeœli w podzbiorze pierwszym pozosta³y jakieœ elementy, kopiujemy je do S
 		out[k++] = in[i++];
 	}
-	while (j < e2) { // copy rest of run 2 to S
+	while (j < e2) { // jeœli w podzbiorze drugim pozosta³y jakieœ elementy, kopiujemy je do S
 		out[k++] = in[j++];
 	}
 }
 
-
-
-
-/* tablice  */
 template <typename E> // quick-sort S
 void MergeSort(E* tab, int l, int r) {
 	if (r > l) {
 		int m = (l + r) / 2;
 		MergeSort(tab, l, m);
 		MergeSort(tab, m + 1, r);
-		Merge(tab, l, m, r);
+		Merge(tab, l, m, r); //scalanie podzbiorów
 	}
 }
 
 template <typename E>
-void Merge(E* tab, int l, int m, int r)
-{
+void Merge(E* tab, int l, int m, int r) {
 	int lSize = m - l + 1;
 	int rSize = r - m;
 
@@ -75,8 +117,7 @@ void Merge(E* tab, int l, int m, int r)
 	E* tabL = new int[lSize];
 	E* tabR = new int[rSize];
 
-	// Kopiowanie danych do tablic pomocniczych
-	for (int x = 0; x < lSize; x++)
+	for (int x = 0; x < lSize; x++)	 // Kopiowanie danych do podzbiorów (tablic) pomocniczych
 		tabL[x] = tab[l + x];
 	for (int y = 0; y < rSize; y++)
 		tabR[y] = tab[m + 1 + y];
@@ -85,8 +126,7 @@ void Merge(E* tab, int l, int m, int r)
 	int indexR = 0;
 	int currIndex;
 
-	//£¹czenie tablic R i L
-	for (currIndex = l; indexL < lSize && indexR < rSize; currIndex++)
+	for (currIndex = l; indexL < lSize && indexR < rSize; currIndex++) 	//£¹czenie podzbiorów R i L
 	{
 		if (tabL[indexL] <= tabR[indexR])
 			tab[currIndex] = tabL[indexL++];
@@ -94,17 +134,13 @@ void Merge(E* tab, int l, int m, int r)
 			tab[currIndex] = tabR[indexR++];
 	}
 
-	//Jeœli w tablicy tabL pozosta³y jeszcze jakieœ elementy
-	//kopiujemy je
-	while (indexL < lSize)
+	while (indexL < lSize) // jeœli w podzbiorze pierwszym pozosta³y jakieœ elementy, kopiujemy je do S
 		tab[currIndex++] = tabL[indexL++];
 
-	//Jeœli w tablicy tabR pozosta³y jeszcze jakieœ elementy
-	//kopiujemy je
-	while (indexR < rSize)
+	while (indexR < rSize) // jeœli w podzbiorze drugim pozosta³y jakieœ elementy, kopiujemy je do S
 		tab[currIndex++] = tabR[indexR++];
 
-	delete[] tabL;
+	delete[] tabL; //usuwanie podzbiorów (tablic dynamicznych) pomocniczych
 	delete[] tabR;
 }
 
