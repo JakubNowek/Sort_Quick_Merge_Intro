@@ -461,23 +461,66 @@ int main()
 					{
 					case '1': cout << "Zapelnianie losowe  " << endl;
 						/* zapelnianie tablic funkcja TabFill */
-						/* sortowanie tablic za pomoca introsorta */
+						TabFill(Array, size);
+						/* sortowanie tablic za pomoca introsorta */						
+						// Sortowanie introspektywne min->max 
+						cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
+						czas_0 = clock();
+						for (int i = 0; i < ROZMIAR; i++){
+							Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
+						}
+						czas_k = clock()-czas_0;
+						cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+						SortCheck(Array, size);
 						break;
 					case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
 						cin >> proc; cout << endl;
 						/* zapelnianie tablic funkcja TabFill */
+						TabFill(Array, size);
 						/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
+						// QuickSort dla tablicy min->max 
+						cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+						for (int i = 0; i < ROZMIAR; i++){
+						QuickSort(Array[i], size, proc);
+						}
 						cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
-						/* sortowanie ponowne posortowanej już tablicy za pomoca introsorta */
+						proc = 100;
+						/* sortowanie ponowne posortowanej już tablicy za pomoca introsorta */						
+						// Sortowanie introspektywne min->max 
+						cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
+						czas_0 = clock();
+						for (int i = 0; i < ROZMIAR; i++){
+							Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
+						}
+						czas_k = clock()-czas_0;
+						cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+						SortCheck(Array, size);
 						break;
 					case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 						/* zapelnianie tablic funkcja TabFill */
-						/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
+						TabFill(Array, size);
+						/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */						
+						// QuickSort dla tablicy MAX->MIN 
+						cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+						for (int i = 0; i < ROZMIAR; i++){
+						_backQuickSort(Array[i], size, proc);
+						}
 						cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-						/* sortowanie ponowne posortowanych już tablic za pomoca introsorta */
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+						SortCheck(Array, size);
+						/* sortowanie ponowne posortowanych już tablic za pomoca introsorta */							
+						// Sortowanie introspektywne min->max
+						cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
+						czas_0 = clock();
+						for (int i = 0; i < ROZMIAR; i++){
+							Hybrid_Introspective_Sort(Array[i], proc*0.01*size);
+						}
+						czas_k = clock()-czas_0;
+						cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
+						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+						SortCheck(Array, size);
 						break;
 					case '0': cout << "Cofanie  " << endl;
 						break;
