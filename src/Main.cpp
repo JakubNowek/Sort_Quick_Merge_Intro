@@ -14,7 +14,7 @@ int main()
 
 	/* Generowanie i wyświetlanie wektora */
 	vector<int> tab[ROZMIAR];
-	TabFill(tab,size);
+	//TabFill(tab,size);
 	//Display(tab);
 	//cout << endl << endl;
 
@@ -43,7 +43,8 @@ int main()
 		cout << endl << "Wybrales opcje: " << choice_1[0] << endl<<endl;
 	
 		switch (choice_1[0])
-		{
+		{	
+			/*QuickSort*/
 			case '1':	while (choice_2[0] != '0') /* Poczatek drugiego switcha */							/* QuickSort */
 					{	
 						cout << "Quick-Sort" << endl;
@@ -74,23 +75,72 @@ int main()
 									{
 									case '1': cout << "Zapelnianie losowe  " << endl;
 											/* zapelnianie wektorow funkcja TabFill */
-											/* sortowanie wektorow  za pomoca quicksorta */
+											TabFill(tab,size);											
+											
+											/* QuickSort dla wektorów */ /* min->max */
+											cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
+											czas_0 = clock();
+											for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+											QuickSort(tab[i],proc);
+											}
+											czas_k = clock() - czas_0;
+											cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+											SortCheck(tab);
 										break;
 										case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
 											cin >> proc; cout << endl;
 											/* zapelnianie wektorow funkcja TabFill */
+											TabFill(tab,size);
 											/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
-											cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
+											
+											/* QuickSort dla wektorów */ /* min->max */
+											cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
+											for (int i = 0; i < ROZMIAR; i++) { //pętla odpowiadająca za sortowanie calej tablicy wektorów
+												QuickSort(tab[i], proc);
+											}
+											proc = 100; //powrót do początkowej wartości procentowej
+											
 											/* sortowanie ponowne posortowanej już tablicy za pomoca quicksorta */
+
+											/* QuickSort dla wektorów */ 	/* min->max */
+											cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
+											czas_0 = clock();
+											for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+											QuickSort(tab[i],proc);
+											}
+											czas_k = clock() - czas_0;
+											cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+											SortCheck(tab);
 										break;
 										case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci"<<endl << endl;
 											/* zapelnianie wektorow funkcja TabFill */
+											TabFill(tab, size);
 											/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
+
+											/* QuickSort dla wektorów */ 	/* MAX->MIN */
+											cout << "Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
+											for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+											_backQuickSort(tab[i],100);
+											}
 											cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-											/* sortowanie ponowne posortowanych już wektorow za pomoca quicksorta */
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+											SortCheck(tab);
+
+											/* sortowanie ponowne posortowanych już wektorow za pomoca quicksorta */
+
+											// QuickSort dla wektorów min->max 
+											cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
+											czas_0 = clock();
+											for (int i = 0; i < ROZMIAR; i++) { //pętla odpowiadająca za sortowanie calej tablicy wektorów
+												QuickSort(tab[i], proc);
+											}
+											czas_k = clock() - czas_0;
+											cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
+											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+											SortCheck(tab);
+
 										break;
 										case '0': cout << "Cofanie  ";
 										break;
@@ -117,23 +167,68 @@ int main()
 									{
 									case '1': cout << "Zapelnianie losowe  " << endl;
 										/* zapelnianie tablic funkcja TabFill */
+										TabFill(Array, size);
 										/* sortowanie tablic za pomoca quicksorta */
+										// QuickSort dla tablicy min->max 
+										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+										czas_0 = clock();
+										for (int i = 0; i < ROZMIAR; i++){
+										QuickSort(Array[i], size, proc);
+										}
+										czas_k = clock()-czas_0;
+										cout << endl << "Czas trwania sortowania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
+
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+										SortCheck(Array, size);
 										break;
 									case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
-										cin >> proc; cout << endl;
+										cin >> proc; cout << endl; // wczytwanie wartości procentowego posortowania
 										/* zapelnianie tablic funkcja TabFill */
+										TabFill(Array, size);
 										/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
+										// QuickSort dla tablicy min->max 
+										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+										for (int i = 0; i < ROZMIAR; i++) {
+											QuickSort(Array[i], size, proc);
+										}
 										cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
+										proc = 100; //powrót do pierwotnej wartości procentowej
 										/* sortowanie ponowne posortowanej już tablicy za pomoca quicksorta */
+										// QuickSort dla tablicy min->max 
+										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+										czas_0 = clock();
+										for (int i = 0; i < ROZMIAR; i++){
+										QuickSort(Array[i], size, proc);
+										}
+										czas_k = clock()-czas_0;
+										cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+										SortCheck(Array, size);
 										break;
 									case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 										/* zapelnianie tablic funkcja TabFill */
-										/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
+										TabFill(Array, size);
+										/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */										
+										// QuickSort dla tablicy  MAX->MIN 
+										cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+										for (int i = 0; i < ROZMIAR; i++){
+										_backQuickSort(Array[i], size, proc);
+										}
 										cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-										/* sortowanie ponowne posortowanych już tablic za pomoca quicksorta */
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+										SortCheck(tab);
+
+										/* sortowanie ponowne posortowanych już tablic za pomoca quicksorta */
+										// QuickSort dla tablicy min->max 
+										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+										czas_0 = clock();
+										for (int i = 0; i < ROZMIAR; i++) {
+											QuickSort(Array[i], size, proc);
+										}
+										czas_k = clock() - czas_0;
+										cout << endl << "Czas trwania tablicowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
+										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+										SortCheck(Array, size);
 										break;
 									case '0': cout << "Cofanie  ";
 										break;
@@ -150,9 +245,10 @@ int main()
 							default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 						}
 					}
-			choice_2[0] = ' ';
+			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 
+			/*MergeSort*/
 			case '2':	while (choice_2[0] != '0') 							/* MergeSort */
 			{
 				cout << "Merge-Sort" << endl;
@@ -166,7 +262,7 @@ int main()
 
 				switch (choice_2[0])
 				{
-				case '1':   /* quick wektory */
+				case '1':   /* merge wektory */
 					while (choice_3[0] != '0') /* Poczatek trzeciego switcha */
 					{
 						cout << "Merge-Sort - Wektory" << endl;
@@ -183,23 +279,66 @@ int main()
 						{
 						case '1': cout << "Zapelnianie losowe  " << endl;
 							/* zapelnianie wektorow funkcja TabFill */
-							/* sortowanie wektorow  za pomoca mergesorta */
+							TabFill(tab, size);
+							/* sortowanie wektorow  za pomoca mergesorta */								
+							// MergeSort dla wektorów  min->max 
+							cout << "Tablice posortowane min->max za pomoca MergeSort (wektory)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+							MergeSort(tab[i]);
+							}
+							czas_k = clock() - czas_0;
+							cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(tab);
 							break;
 						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
 							cin >> proc; cout << endl;
 							/* zapelnianie wektorow funkcja TabFill */
+							TabFill(tab, size);
 							/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
+							// QuickSort dla wektorów  min->max 
+							cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
+							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+							QuickSort(tab[i],proc);
+							}
 							cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
-							/* sortowanie ponowne posortowanej już tablicy za pomoca mergesorta */
+							proc = 100;
+							/* sortowanie ponowne posortowanej już tablicy za pomoca mergesorta */								
+							//MergeSort dla wektorów min->max 
+							cout << "Tablice posortowane min->max za pomoca MergeSort (wektory)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+							MergeSort(tab[i]);
+							}
+							czas_k = clock() - czas_0;
+							cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(tab);
 							break;
 						case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 							/* zapelnianie wektorow funkcja TabFill */
+							TabFill(tab, size);
 							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
+							// QuickSort dla wektorów MAX->MIN 
+							cout << " Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
+							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+							_backQuickSort(tab[i],100);
+							}
 							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-							/* sortowanie ponowne posortowanych już wektorow za pomoca mergesorta */
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(tab);
+							/* sortowanie ponowne posortowanych już wektorow za pomoca mergesorta */								
+							// MergeSort dla wektorów min->max 
+							cout << "Tablice posortowane min->max za pomoca MergeSort (wektory)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
+							MergeSort(tab[i]);
+							}
+							czas_k = clock() - czas_0;
+							cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
+							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(tab);
 							break;
 						case '0': cout << "Cofanie  ";
 							break;
@@ -209,7 +348,7 @@ int main()
 				choice_3[0] = ' ';
 				break;
 
-				case '2':   /*quick tablice*/
+				case '2':   /*merge tablice*/
 					while (choice_3[0] != '0')
 					{
 						cout << "Merge-Sort - Tablice" << endl;
@@ -226,23 +365,66 @@ int main()
 						{
 						case '1': cout << "Zapelnianie losowe  " << endl;
 							/* zapelnianie tablic funkcja TabFill */
-							/* sortowanie tablic za pomoca mergesorta */
+							TabFill(Array, size);
+							/* sortowanie tablic za pomoca mergesorta */							
+							//MergeSort dla tablicy min->max 
+							cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++){
+							MergeSort(Array[i],0,size-1);
+							}
+							czas_k = clock()-czas_0;
+							cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(Array, size);
 							break;
 						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
 							cin >> proc; cout << endl;
 							/* zapelnianie tablic funkcja TabFill */
+							TabFill(Array, size);
 							/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
+							// QuickSort dla tablicy min->max 
+							cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+							for (int i = 0; i < ROZMIAR; i++){
+							QuickSort(Array[i], size, proc);
+							}
 							cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
+							proc = 100;
 							/* sortowanie ponowne posortowanej już tablicy za pomoca mergesorta */
+							//MergeSort dla tablicy min->max 
+							cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++) {
+								MergeSort(Array[i], 0, size - 1);
+							}
+							czas_k = clock() - czas_0;
+							cout << endl << "Czas trwania tablicowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(Array, size);
 							break;
 						case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 							/* zapelnianie tablic funkcja TabFill */
-							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
+							TabFill(Array, size);
+							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */	
+							// QuickSort dla tablicy MAX->MIN 
+							cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+							for (int i = 0; i < ROZMIAR; i++){
+							_backQuickSort(Array[i], size, proc);
+							}
 							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
-							/* sortowanie ponowne posortowanych już tablic za pomoca mergesorta */
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(Array, size);
+							/* sortowanie ponowne posortowanych już tablic za pomoca mergesorta */							
+							// MergeSort dla tablicy min->max
+							cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
+							czas_0 = clock();
+							for (int i = 0; i < ROZMIAR; i++){
+							MergeSort(Array[i],0,size-1);
+							}
+							czas_k = clock()-czas_0;
+							cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
+							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
+							SortCheck(Array, size);
 							break;
 						case '0': cout << "Cofanie  ";
 							break;
@@ -259,9 +441,10 @@ int main()
 				default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 				}
 			}
-			choice_2[0] = ' ';
+			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 
+			/*IntroSort*/
 			case '3':   while (choice_3[0] != '0')							/*Introsort*/
 				{
 					cout << "Intro-Sort" << endl;
@@ -301,14 +484,15 @@ int main()
 					default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 					}
 				}
-			choice_2[0] = ' ';
+			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 
+			/*Kończenie programu*/
 			case '0':  cout << endl << "Ewakuacja" << endl;
-			choice_2[0] = ' ';
+			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 	
-			default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
+			default: cerr << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 		}
 	}
 
@@ -317,16 +501,15 @@ int main()
 	/*----------------------------------------------------Sortowanie wektorow------------------------------------------------------------------- */
 
 
-	/* MAX->MIN */	
-	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+
+	/* QuickSort dla wektorów */ 	/* MAX->MIN */	
 	//cout << " Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
 	//_backQuickSort(tab[i],100);
 	//}
 	
 
-	/* min->max */
-	/* MergeSort dla wektorów */
+	/* MergeSort dla wektorów */	/* min->max */
 	//cout << "Tablice posortowane min->max za pomoca MergeSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
@@ -336,8 +519,7 @@ int main()
 	//cout << endl << "Czas trwania wektorowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;
 
 
-	/* min->max */
-	/* QuickSort dla wektorów */ // sotowanie tablicy stopień posortowania w procentach przekazujemy w parametrze 'proc'
+	/* QuickSort dla wektorów */ 	/* min->max */
 	//cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
@@ -361,7 +543,7 @@ int main()
 	
 
 	/* MAX->MIN */
-	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
+	/* QuickSort dla tablicy  */
 	//cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){
 	//_backQuickSort(Array[i], size, proc);
@@ -379,8 +561,8 @@ int main()
 	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 
 
-	/* min->max */
-	/* QuickSort dla tablicy (procent posortowania określany w zmiennej 'proc') */
+
+	/* QuickSort dla tablicy */ /* min->max */
 	//cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
