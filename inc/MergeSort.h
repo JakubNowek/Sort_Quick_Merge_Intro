@@ -13,7 +13,7 @@
 /**
  * @brief - funkcja realizuj¹ca algorytm sortowania przez scalanie na wektorach 
  * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
- * @param S - tablica wektorów
+ * @param S - wektor
 */
 template <typename E> // merge-sort S
 void MergeSort(std::vector<E>& S);
