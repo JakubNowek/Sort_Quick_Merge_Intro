@@ -34,5 +34,6 @@ void TabFill(SType** Array, int Size){
 				Array[i][j] = ((rand() % RANGE) / DECIMAL);
 			}
 	}
-
+	
 }
+

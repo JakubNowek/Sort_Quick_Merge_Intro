@@ -10,6 +10,7 @@ int main()
 	int size = 10000;
 	double proc = 100;	 // procent posortowania tablicy
 	double czas_0 = 0, czas_k = 0;
+	int need_delete = 0;
 
 
 	/* Generowanie i wyświetlanie wektora */
@@ -168,6 +169,7 @@ int main()
 									case '1': cout << "Zapelnianie losowe  " << endl;
 										/* zapelnianie tablic funkcja TabFill */
 										TabFill(Array, size);
+										need_delete = 1;
 										/* sortowanie tablic za pomoca quicksorta */
 										// QuickSort dla tablicy min->max 
 										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
@@ -185,6 +187,7 @@ int main()
 										cin >> proc; cout << endl; // wczytwanie wartości procentowego posortowania
 										/* zapelnianie tablic funkcja TabFill */
 										TabFill(Array, size);
+										need_delete = 1;
 										/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 										// QuickSort dla tablicy min->max 
 										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
@@ -208,6 +211,7 @@ int main()
 									case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 										/* zapelnianie tablic funkcja TabFill */
 										TabFill(Array, size);
+										need_delete = 1;
 										/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */										
 										// QuickSort dla tablicy  MAX->MIN 
 										cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
@@ -366,6 +370,7 @@ int main()
 						case '1': cout << "Zapelnianie losowe  " << endl;
 							/* zapelnianie tablic funkcja TabFill */
 							TabFill(Array, size);
+							need_delete = 1;
 							/* sortowanie tablic za pomoca mergesorta */							
 							//MergeSort dla tablicy min->max 
 							cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
@@ -382,6 +387,7 @@ int main()
 							cin >> proc; cout << endl;
 							/* zapelnianie tablic funkcja TabFill */
 							TabFill(Array, size);
+							need_delete = 1;
 							/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 							// QuickSort dla tablicy min->max 
 							cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
@@ -405,6 +411,7 @@ int main()
 						case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 							/* zapelnianie tablic funkcja TabFill */
 							TabFill(Array, size);
+							need_delete = 1;
 							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */	
 							// QuickSort dla tablicy MAX->MIN 
 							cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
@@ -462,6 +469,7 @@ int main()
 					case '1': cout << "Zapelnianie losowe  " << endl;
 						/* zapelnianie tablic funkcja TabFill */
 						TabFill(Array, size);
+						need_delete = 1;
 						/* sortowanie tablic za pomoca introsorta */						
 						// Sortowanie introspektywne min->max 
 						cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
@@ -478,6 +486,7 @@ int main()
 						cin >> proc; cout << endl;
 						/* zapelnianie tablic funkcja TabFill */
 						TabFill(Array, size);
+						need_delete = 1;
 						/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 						// QuickSort dla tablicy min->max 
 						cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
@@ -501,6 +510,7 @@ int main()
 					case '3': cout << "Sortowanie tablicy posortowanej w odwrotnej kolejnosci" << endl << endl;
 						/* zapelnianie tablic funkcja TabFill */
 						TabFill(Array, size);
+						need_delete = 1;
 						/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */						
 						// QuickSort dla tablicy MAX->MIN 
 						cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
@@ -637,10 +647,13 @@ int main()
 	*/
 
 	/* Usuwanie tablic* */
-	for (int i = 0; i < ROZMIAR; i++){
-		delete Array[i];
+	if (need_delete == 1)
+	{
+		for (int i = 0; i < ROZMIAR; i++) {
+			delete[] Array[i];
+		}
 	}
-
-
+	delete[] Array;
+	
 	return 0;
 }
