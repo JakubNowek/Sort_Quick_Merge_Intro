@@ -4,7 +4,79 @@
 #include <cmath>
 #include "Exchange.h"
 
-/* Funkcja odpowiedzialna za sortowanie, ³¹cz¹ca sortowanie introspektywne i sortowanie przez wstawianie */
+/*nag³ówki funkcji*/
+
+/**
+ * @brief funkcja odpowiedzialna za sortowanie, ³¹cz¹ca sortowanie introspektywne i sortowanie przez wstawianie
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param N - zmienna przechowuj¹ca iloœæ kolumn tablicy
+*/
+template <class Type>
+void Hybrid_Introspective_Sort(Type* Array, long N);
+
+/**
+ * @brief funkcja rekurencyjna realizuj¹ca algorytm sortowania introspektywnego
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param N - zmienna przechowuj¹ca rozmiar tablicy dynamicznej
+ * @param M - zmienna okreœlajaca maksymaln¹ g³êbokoœæ rekurencji
+*/
+template <class Type>
+void IntroSort(Type* Array, long N, int M);
+
+/**
+ * @brief funkcja odpowiedzialna za podzia³ tablicy na dwa zbiory
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param L - zmienna przechowuj¹ca numer indeksu pierwszego elementu tablicy dynamicznej
+ * @param R - zmienna przechowuj¹ca numer indeksu ostatniego elementu tablicy dynamicznej
+ * @return  - funkcja zwraca rozmiar podzbiorów, na które podzielona zosta³a tablica
+*/
+template <class Type>
+long Partition(Type* Array, long L, long R);
+
+/**
+ * @brief funkcja obliczaj¹ca pivot jako medianê z pierwszego , œrodkowego i ostatniego elementu tablicy
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param L - zmienna przechowuj¹ca numer indeksu pierwszego elementu tablicy dynamicznej
+ * @param R - zmienna przechowuj¹ca numer indeksu ostatniego elementu tablicy dynamicznej
+*/
+template <class Type>
+void MedianOfThree(Type* Array, long& L, long& R);
+
+/**
+ * @brief funkcja realizuj¹ca algorytm budowanie kopca dla sortowania Heap Sort (sortowanie przez kopcowanie) dla najgorzego scenraiusza QuickSort
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param N - zmienna przechowuj¹ca rozmiar tablicy dynamicznej
+*/
+template <class Type>
+void Heap_Sort(Type* Array, long N);
+
+/**
+ * @brief funkcja realizuj¹ca procedurê rozbierania kopca dla sortowanie przez kopcowanie
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param i - zmienna przechowuj¹ca rozmiar kopca
+ * @param N - zmienna przechowuj¹ca rozmiar tablicy dynamicznej
+*/
+template <class Type>
+void Heapify(Type* Array, long i, long N);
+
+/**
+ * @brief funkcja realizuj¹ca algorytm sortowania przez wstawianie, u¿ywana gdy tablica jest zbyt ma³a ¿eby op³aca³o siê sortowanie szybkie
+ * @tparam Type - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param Array - tablica dynamiczna
+ * @param N - zmienna przechowuj¹ca rozmiar tablicy dynamicznej
+*/
+template <class Type>
+void Insertion_Sort(Type* Array, long N);
+
+
+/*rozwiniêcia nag³ówków funkcji*/
+
 template <class Type>
 void Hybrid_Introspective_Sort(Type* Array, long N)
 {
@@ -14,7 +86,6 @@ void Hybrid_Introspective_Sort(Type* Array, long N)
 
 }
 
-/* Funkcja realizuj¹ca algorytm sortowania introspektywnego */
 template <class Type>
 void IntroSort(Type* Array, long N, int M)
 {
@@ -31,7 +102,7 @@ void IntroSort(Type* Array, long N, int M)
         IntroSort(Array + i + 1, N - 1 - i, M - 1);
 }
 
-/* Funkcja odpowiedzialna za podzia³ tablicy */
+
 template <class Type>
 long Partition(Type* Array, long L, long R)
 {
@@ -50,7 +121,6 @@ long Partition(Type* Array, long L, long R)
     return i;
 }
 
-/* Funkcja obliczaj¹ca medianê z pierwszego , œrodkowego i ostatniego elementu tablicy */
 template <class Type>
 void MedianOfThree(Type* Array, long& L, long& R)
 {
@@ -63,8 +133,6 @@ void MedianOfThree(Type* Array, long& L, long& R)
     Exchange(Array, R / 2, R - 1);
 }
 
-
-/* Funkcja realizuj¹ca algorytm sortowania Heap Sort (sortowanie przez kopcowanie) dla najgorzego scenraiusza QuickSort */
 template <class Type>
 void Heap_Sort(Type* Array, long N)
 {
@@ -93,7 +161,7 @@ void Heapify(Type* Array, long i, long N)
         i = j;
     }
 }
-/* Funkcja realizuj¹ca algorytm sortowania przez wstawianie, u¿ywana gdy tablica jest zbyt ma³a ¿eby op³aca³o siê sortowanie szybkie*/
+
 template <class Type>
 void Insertion_Sort(Type* Array, long N)
 {

@@ -3,6 +3,28 @@
 #include <vector>
 #include "Rozmiar.h"
 
+/*Nag³ówki*/
+
+/**
+ * @brief funkcja odpowiada za wypisywanie elementów tablicy wektorów
+ * @tparam Type  - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param toDisplay - tablica wektorów
+*/
+template <typename Type>
+void Display(std::vector<Type> toDisplay[]);
+
+/**
+ * @brief przeci¹¿enie funkcji Display, odpowiada za wypisywanie elementów dwuwymiarowej tablicy dynamicznej
+ * @tparam Type  - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+ * @param toDisplay - dynamiczna tablica dwuwymiarowa
+ * @param size - zmienna przechowuj¹ca iloœc kolumn tablicy
+*/
+template <typename Type>
+void Display(Type** Array, int size);
+
+
+/*rozwiniêcia nag³ówków*/
+
 template <typename Type>
 void Display(std::vector<Type> toDisplay[] ) {
 
