@@ -18,7 +18,7 @@ void SortCheck(vector<Type> toCheck[]) {
 		boost = 0;
 		for (int j = 0; j < toCheck[i].size()-1; j++) {
 			
-			if (toCheck[i][j] == toCheck[i][j + 1])
+			if (toCheck[i][j] == toCheck[i][j+1])
 			{
 				boost += 1;
 			}
@@ -27,7 +27,7 @@ void SortCheck(vector<Type> toCheck[]) {
 				row_check =row_check + 1;
 				
 			}
-			else if (toCheck[i][j] > toCheck[i][j + 1])
+			else if (toCheck[i][j] > toCheck[i][j+1])
 			{
 				row_check =row_check - 1 ;
 			}
@@ -49,15 +49,15 @@ void SortCheck(vector<Type> toCheck[]) {
 	}
 	if (array_check == ROZMIAR)
 	{
-		cout << endl << "Posortowano: " << array_check << " tablic rosnaco." << endl << endl;
+		cout << endl << "WEK Posortowano: " << array_check << " tablic rosnaco." << endl << endl;
 	}
 	else if (array_check == -ROZMIAR)
 	{
-		cout << endl << "Posortowano: " << -array_check << " tablic malejaco." << endl << endl;
+		cout << endl << "WEK Posortowano: " << -array_check << " tablic malejaco." << endl << endl;
 	}
 	else
 	{
-		cout << endl << "SortCheck:  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << endl << endl;
+		cout << endl << "WEK  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << endl << endl;
 	}
 
 

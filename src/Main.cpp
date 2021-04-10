@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	cout << "Siema" << endl;
-	int size = 15;
+	int size = 10000;
 	double proc = 100;	 // procent posortowania tablicy
 	double czas_0 = 0, czas_k = 0;
 
@@ -20,7 +20,7 @@ int main()
 
 	/* Generowanie i wyświetlanie tablicy */
 	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
-	TabFill(Array, size);			  // wypełnianie tablicy
+	//TabFill(Array, size);			  // wypełnianie tablicy
 	//Display(Array, size);
 	cout << endl << endl;
 
@@ -216,7 +216,7 @@ int main()
 										}
 										cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (malejaco)" << endl;
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
-										SortCheck(tab);
+										SortCheck(Array,size);
 
 										/* sortowanie ponowne posortowanych już tablic za pomoca quicksorta */
 										// QuickSort dla tablicy min->max 
@@ -527,6 +527,7 @@ int main()
 					default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 					}
 				}
+				choice_3[0] = ' ';
 			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 
