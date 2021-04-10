@@ -4,7 +4,7 @@
 #include <functional>
 #include "Rozmiar.h"
 #include "Exchange.h"
-using namespace std;
+
 
 /* Wektory */
 

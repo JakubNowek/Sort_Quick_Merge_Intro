@@ -5,11 +5,10 @@
 #include "Rozmiar.h"
 #include <cstdlib>
 #include <time.h>
-using namespace std;
 
 //void  TabFill(vector<int> toFill[], int Size);
 template< typename SType>
-void  TabFill(vector<SType> toFill[], int Size) {
+void  TabFill(std::vector<SType> toFill[], int Size) {
 	std::cout << "Wylosowano " << ROZMIAR << " tablic " << Size <<" wersowych."<< std::endl;
 	srand(time(NULL)); /*Funkcja inicjalizuj¹ca funkcjê rand(), przy ka¿dym uruchomieniu programu uzyskujemy inn¹ sekwencjê liczb losowych*/
 	

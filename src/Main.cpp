@@ -2,19 +2,23 @@
 //
 
 #include "Main.h"
-using namespace std;
 
 int main()
 {
-	cout << "Siema" << endl;
-	int size = 10000;
+	/* udostępnienie nazw z przestrzeni std */
+	using std::cout;
+	using std::endl;
+	using std::cin;
+
+	cout << "SORTOWANKO" << endl; //powitanie
+	int size = 10000; //rozmiar tablicy (ilość kolumn)
 	double proc = 100;	 // procent posortowania tablicy
-	double czas_0 = 0, czas_k = 0;
-	int need_delete = 0;
+	double czas_0 = 0, czas_k = 0; //zmienne pomocnicze wykorzystywane do obliczaniu czasu działania algorytmu
+	int need_delete = 0; //zmienna pomocnicza, określająca, czy należy usunąć wersy tablicy dynamicznej. 1 - trzeba usunąć, 2 - nie trzeba usuwać
 
 
 	/* Generowanie i wyświetlanie wektora */
-	vector<int> tab[ROZMIAR];
+	std::vector<int> tab[ROZMIAR];
 	//TabFill(tab,size);
 	//Display(tab);
 	//cout << endl << endl;
@@ -100,6 +104,7 @@ int main()
 											for (int i = 0; i < ROZMIAR; i++) { //pętla odpowiadająca za sortowanie calej tablicy wektorów
 												QuickSort(tab[i], proc);
 											}
+											cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
 											proc = 100; //powrót do początkowej wartości procentowej
 											
 											/* sortowanie ponowne posortowanej już tablicy za pomoca quicksorta */
@@ -546,7 +551,7 @@ int main()
 			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 	
-			default: cerr << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
+			default: cout << "NIEROZPOZNANO" << endl; cin.ignore(100000, '\n');   break;
 		}
 	}
 
@@ -587,25 +592,19 @@ int main()
 	//SortCheck(tab);
 
 
-
 /*----------------------------------------------------Sortowanie tablic*------------------------------------------------------------------- */
 
 
-
 	//Display(Array, size);			  // wyświetlanie tablicy
-	
-	
-
-	/* MAX->MIN */
-	/* QuickSort dla tablicy  */
+		
+	/* QuickSort dla tablicy */	/* MAX->MIN */
 	//cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
 	//for (int i = 0; i < ROZMIAR; i++){
 	//_backQuickSort(Array[i], size, proc);
 	//}
 
 
-	/* min->max */
-	/* Sortowanie introspektywne (procent posortowania określany w zmiennej 'proc') */
+	/* Sortowanie introspektywne */	/* min->max */
 	//cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
@@ -613,7 +612,6 @@ int main()
 	//}
 	//czas_k = clock()-czas_0;
 	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
-
 
 
 	/* QuickSort dla tablicy */ /* min->max */
@@ -625,8 +623,8 @@ int main()
 	//czas_k = clock()-czas_0;
 	//cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
 
-	/* min->max */
-	/*MergeSort dla tablicy*/
+
+	/*MergeSort dla tablicy*/	/* min->max */
 	//cout << "Tablice posortowana min->max za pomoca MergeSort (tablice*)" << endl;
 	//czas_0 = clock();
 	//for (int i = 0; i < ROZMIAR; i++){
@@ -639,12 +637,6 @@ int main()
 
 	//SortCheck(Array, size);
 
-
-
-
-	/*
-	TODO:	dodać menu
-	*/
 
 	/* Usuwanie tablic* */
 	if (need_delete == 1)

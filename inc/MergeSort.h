@@ -4,12 +4,12 @@
 #include <functional>
 #include "Rozmiar.h"
 #include "Exchange.h"
-using namespace std;
+//using namespace std;
 
 
 template <typename E> // merge-sort S
-void MergeSort(vector<E>& S/*, const C& less*/) {
-	typedef vector<E> vect;
+void MergeSort(std::vector<E>& S/*, const C& less*/) {
+	typedef std::vector<E> vect;
 	int n = S.size();
 	vect v1(S); vect* in = &v1; // initial input vector
 	vect v2(n); vect* out = &v2; // initial output vector
@@ -26,7 +26,7 @@ void MergeSort(vector<E>& S/*, const C& less*/) {
 
 // merge in[b. .b+m-1] and in[b+m. .b+2*m-1]
 template <typename E/*, typename C*/>
-void Merge(vector<E>& in, vector<E>& out, int b, int m) {
+void Merge(std::vector<E>& in, std::vector<E>& out, int b, int m) {
 	int i = b; // index into run #1
 	int j = b + m; // index into run #2
 	int n = in.size();

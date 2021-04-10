@@ -4,11 +4,10 @@
 #include "Rozmiar.h"
 #include <vector>
 
-using namespace std;
 
 /* SortCheck dla wektrów */
 template <typename Type>
-void SortCheck(vector<Type> toCheck[]) {
+void SortCheck(std::vector<Type> toCheck[]) {
 	
 	int row_check = 0;
 	int array_check = 0;
@@ -49,15 +48,15 @@ void SortCheck(vector<Type> toCheck[]) {
 	}
 	if (array_check == ROZMIAR)
 	{
-		cout << endl << "WEK Posortowano: " << array_check << " tablic rosnaco." << endl << endl;
+		std::cout << std::endl << "SortCheck:  Posortowano: " << array_check << " tablic rosnaco." << std::endl << std::endl;
 	}
 	else if (array_check == -ROZMIAR)
 	{
-		cout << endl << "WEK Posortowano: " << -array_check << " tablic malejaco." << endl << endl;
+		std::cout << std::endl << "SortCheck:  Posortowano: " << -array_check << " tablic malejaco." << std::endl << std::endl;
 	}
 	else
 	{
-		cout << endl << "WEK  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << endl << endl;
+		std::cout << std::endl << "SortCheck:  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << std::endl << std::endl;
 	}
 
 
@@ -105,14 +104,14 @@ void SortCheck(Type** toCheck, int size) {
 	}
 	if (array_check == ROZMIAR)
 	{
-		cout << endl << "SortCheck:  Posortowano: " << array_check << " tablic rosnaco." << endl << endl;
+		std::cout << std::endl << "SortCheck:  Posortowano: " << array_check << " tablic rosnaco." << std::endl << std::endl;
 	}
 	else if (array_check == -ROZMIAR)
 	{
-		cout << endl << "SortCheck:  Posortowano: " << -array_check << " tablic malejaco." << endl << endl;
+		std::cout << std::endl << "SortCheck:  Posortowano: " << -array_check << " tablic malejaco." << std::endl << std::endl;
 	}
 	else
 	{
-		cout << endl << "SortCheck:  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << endl << endl;
+		std::cout << std::endl << "SortCheck:  CO NAJMNIEJ JEDNA TABLICA NIE JEST POSORTOWANA!" << std::endl << std::endl;
 	}
 }

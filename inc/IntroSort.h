@@ -3,7 +3,6 @@
 #include <vector>
 #include <cmath>
 #include "Exchange.h"
-using namespace std;
 
 /* Funkcja odpowiedzialna za sortowanie, ³¹cz¹ca sortowanie introspektywne i sortowanie przez wstawianie */
 template <class Type>
@@ -64,15 +63,6 @@ void MedianOfThree(Type* Array, long& L, long& R)
     Exchange(Array, R / 2, R - 1);
 }
 
-///* Funkcja odpowiadaj¹ca za zamianê elementu w tablicy */
-//template <class Type>
-//void Exchange(Type* Array, long i, long j)
-//{
-//    Type temp;
-//    temp = Array[i];
-//    Array[i] = Array[j];
-//    Array[j] = temp;
-//}
 
 /* Funkcja realizuj¹ca algorytm sortowania Heap Sort (sortowanie przez kopcowanie) dla najgorzego scenraiusza QuickSort */
 template <class Type>
