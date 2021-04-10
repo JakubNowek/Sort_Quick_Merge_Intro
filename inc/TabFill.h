@@ -45,7 +45,7 @@ void  TabFill(std::vector<SType> toFill[], int Size) {
 	for (int i = 0; i < ROZMIAR; i++) { /*przechodzimy przez kolejne wektory (od wektora 0 do wektora ROZMIAR)*/
 		for (int j = 0; j < Size; j++) { /*przechodzimy przez kolejne elementy wektora (od 0 do Size)*/
 
-			toFill[i].push_back((rand() % RANGE)/DECIMAL); /*dodawanie do kolejnych pol wektora liczb losowych calkowitych z zakresu od 1 - 10*/
+			toFill[i].push_back(/*(rand() % RANGE)/DECIMAL*/12); /*dodawanie do kolejnych pol wektora liczb losowych calkowitych z zakresu od 1 - 10*/
 		}
 	}
 }
