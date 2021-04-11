@@ -128,7 +128,7 @@ void Merge(E* tab, int l, int m, int r) {
 
 	for (currIndex = l; indexL < lSize && indexR < rSize; currIndex++) 	//£¹czenie podzbiorów R i L
 	{
-		if (tabL[indexL] <= tabR[indexR])
+		if (tabL[indexL] <= tabR[indexR]) // <=  malej¹co, >== rosn¹co
 			tab[currIndex] = tabL[indexL++];
 		else
 			tab[currIndex] = tabR[indexR++];

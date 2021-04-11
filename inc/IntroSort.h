@@ -112,7 +112,7 @@ long Partition(Type* Array, long L, long R)
     for (i = L, j = R - 2; ; )
     {
         for (; Array[i] < Array[R - 1]; ++i);
-        for (; j >= L && Array[j] > Array[R - 1]; --j);
+        for (; j >= L && Array[j] > Array[R - 1]; --j); // >
         if (i < j)
             Exchange(Array, i++, j--);
         else break;
@@ -146,6 +146,22 @@ void Heap_Sort(Type* Array, long N)
     }
 }
 
+//template <class Type>
+//void Heapify(Type* Array, long i, long N)
+//{
+//    long j;
+//    while (i <= N / 2)
+//    {
+//        j = 2 * i;
+//        if (j + 1 <= N && Array[j + 1] > Array[j])
+//            j = j + 1;
+//        if (Array[i] < Array[j])
+//            Exchange(Array, i, j);
+//        else break;
+//        i = j;
+//    }
+//}
+
 template <class Type>
 void Heapify(Type* Array, long i, long N)
 {
@@ -153,15 +169,28 @@ void Heapify(Type* Array, long i, long N)
     while (i <= N / 2)
     {
         j = 2 * i;
-        if (j + 1 <= N && Array[j + 1] > Array[j])
+        if (j + 1 <= N && Array[j + 1] > Array[j]) // >
             j = j + 1;
-        if (Array[i] < Array[j])
+        if (Array[i] < Array[j]) // <
             Exchange(Array, i, j);
         else break;
         i = j;
     }
 }
 
+//template <class Type>
+//void Insertion_Sort(Type* Array, long N)
+//{
+//    long i, j;
+//    Type temp;
+//    for (i = 1; i < N; ++i)
+//    {
+//        temp = Array[i];
+//        for (j = i; j > 0 && temp < Array[j - 1]; --j)
+//            Array[j] = Array[j - 1];
+//        Array[j] = temp;
+//    }
+//}
 template <class Type>
 void Insertion_Sort(Type* Array, long N)
 {
@@ -170,7 +199,7 @@ void Insertion_Sort(Type* Array, long N)
     for (i = 1; i < N; ++i)
     {
         temp = Array[i];
-        for (j = i; j > 0 && temp < Array[j - 1]; --j)
+        for (j = i; j > 0 && temp < Array[j - 1]; --j) //<
             Array[j] = Array[j - 1];
         Array[j] = temp;
     }
