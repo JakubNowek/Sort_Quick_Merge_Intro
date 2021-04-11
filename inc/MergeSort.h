@@ -175,7 +175,7 @@ void Merge(E* tab, int l, int m, int r) {
 
 	for (currIndex = l; indexL < lSize && indexR < rSize; currIndex++) 	//£¹czenie podzbiorów R i L
 	{
-		if (tabL[indexL] <= tabR[indexR]) // <=  malej¹co, >== rosn¹co
+		if (tabL[indexL] <= tabR[indexR]) // <=  niemalej¹co, >== nierosn¹co
 			tab[currIndex] = tabL[indexL++];
 		else
 			tab[currIndex] = tabR[indexR++];
@@ -205,7 +205,7 @@ void _backMergeSort(std::vector<E>& S) {
 	vect v2(n); vect* out = &v2; // poczatkowy wektor wyjœciowy
 	for (int m = 1; m < n; m *= 2) { // podwajanie rozmiaru podzbiorów
 		for (int b = 0; b < n; b += 2 * m) { // pocz¹tek podzbioru 
-			Merge(*in, *out, b, m); // scalanie podzbiorów
+			_backMerge(*in, *out, b, m); // scalanie podzbiorów
 		}
 		std::swap(in, out); // zamiana wektora wejœciowego z wyjœciowym
 	}
@@ -222,7 +222,7 @@ void _backMerge(std::vector<E>& in, std::vector<E>& out, int b, int m) {
 	int e2 = std::min(b + 2 * m, n); // koniec drugiego podzbioru
 	int k = b;
 	while ((i < e1) && (j < e2)) {
-		if (!(in[j] <= in[i])) // przy³¹cz mniejszy do S   < oznacza sortowanie rosn¹ce, > sortowanie malej¹ce
+		if (!(in[j] >= in[i])) // przy³¹cz mniejszy do S   < oznacza sortowanie rosn¹ce, > sortowanie malej¹ce
 		{
 			out[k++] = in[i++];
 		}
@@ -243,9 +243,9 @@ template <typename E> // quick-sort S
 void _backMergeSort(E* tab, int l, int r) {
 	if (r > l) {
 		int m = (l + r) / 2;
-		MergeSort(tab, l, m);
-		MergeSort(tab, m + 1, r);
-		Merge(tab, l, m, r); //scalanie podzbiorów
+		_backMergeSort(tab, l, m);
+		_backMergeSort(tab, m + 1, r);
+		_backMerge(tab, l, m, r); //scalanie podzbiorów
 	}
 }
 
@@ -269,7 +269,7 @@ void _backMerge(E* tab, int l, int m, int r) {
 
 	for (currIndex = l; indexL < lSize && indexR < rSize; currIndex++) 	//£¹czenie podzbiorów R i L
 	{
-		if (tabL[indexL] <= tabR[indexR]) // <=  malej¹co, >== rosn¹co
+		if (tabL[indexL] >= tabR[indexR]) // <=  niemalej¹co, >== nierosn¹co
 			tab[currIndex] = tabL[indexL++];
 		else
 			tab[currIndex] = tabR[indexR++];

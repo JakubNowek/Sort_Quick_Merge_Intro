@@ -101,7 +101,7 @@ int main()
 											TabFill(tab,size);
 											/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 											
-											/* QuickSort dla wektorów */ /* min->max */
+											// QuickSort dla wektorów  min->max 
 											cout << "Tablice posortowane min->max za pomoca OuickSort (wektory)" << endl;
 											for (int i = 0; i < ROZMIAR; i++) { //pętla odpowiadająca za sortowanie calej tablicy wektorów
 												QuickSort(tab[i], proc);
@@ -128,9 +128,9 @@ int main()
 											/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
 
 											/* QuickSort dla wektorów */ 	/* MAX->MIN */
-											cout << "Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
+											cout << "Tablice posortowane max->min za pomoca MergeSort (wektory)" << endl;
 											for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
-											_backQuickSort(tab[i],100);
+											_backMergeSort(tab[i]);
 											}
 											cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
@@ -197,9 +197,9 @@ int main()
 										need_delete = 1;
 										/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 										// QuickSort dla tablicy min->max 
-										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+										cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
 										for (int i = 0; i < ROZMIAR; i++) {
-											QuickSort(Array[i], size, proc);
+											Hybrid_Introspective_Sort(Array[i], proc * 0.01 * size);
 										}
 										cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
 										proc = 100; //powrót do pierwotnej wartości procentowej
@@ -221,9 +221,9 @@ int main()
 										need_delete = 1;
 										/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */										
 										// QuickSort dla tablicy  MAX->MIN 
-										cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+										cout << "Tablice posortowana max->min za pomoca MergeSort (tablice*)" << endl;
 										for (int i = 0; i < ROZMIAR; i++){
-										_backQuickSort(Array[i], size, proc);
+										_backMergeSort(Array[i], 0, size-1);
 										}
 										cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
@@ -332,9 +332,9 @@ int main()
 							TabFill(tab, size);
 							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */
 							// QuickSort dla wektorów MAX->MIN 
-							cout << " Tablice posortowane max->min za pomoca OuickSort (wektory)" << endl;
+							cout << " Tablice posortowane max->min za pomoca MergeSort (wektory)" << endl;
 							for (int i = 0; i < ROZMIAR; i++){ //pętla odpowiadająca za sortowanie calej tablicy wektorów
-							_backQuickSort(tab[i],100);
+							_backMergeSort(tab[i]);
 							}
 							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
@@ -397,9 +397,9 @@ int main()
 							need_delete = 1;
 							/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 							// QuickSort dla tablicy min->max 
-							cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+							cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
 							for (int i = 0; i < ROZMIAR; i++){
-							QuickSort(Array[i], size, proc);
+								Hybrid_Introspective_Sort(Array[i], proc * 0.01 * size);
 							}
 							cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
 							proc = 100;
@@ -421,9 +421,9 @@ int main()
 							need_delete = 1;
 							/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */	
 							// QuickSort dla tablicy MAX->MIN 
-							cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+							cout << "Tablice posortowana max->min za pomoca MergeSort (tablice*)" << endl;
 							for (int i = 0; i < ROZMIAR; i++){
-							_backQuickSort(Array[i], size, proc);
+							_backMergeSort(Array[i], 0, size-1);
 							}
 							cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
@@ -496,9 +496,9 @@ int main()
 						need_delete = 1;
 						/* sortowanie WSTĘPNE w procentach za pomoca quicksorta */
 						// QuickSort dla tablicy min->max 
-						cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
+						cout << "Tablice posortowana min->max za pomoca IntroSort (tablice*)" << endl;
 						for (int i = 0; i < ROZMIAR; i++){
-						QuickSort(Array[i], size, proc);
+							Hybrid_Introspective_Sort(Array[i], proc * 0.01 * size);
 						}
 						cout << "Tablice zostaly wstepnie posortowane w " << proc << "% kazda." << endl;
 						proc = 100;
@@ -520,9 +520,9 @@ int main()
 						need_delete = 1;
 						/* sortowanie WSTĘPNE w odwrotnej kolejnosci (max->min) za pomoca quicksorta */						
 						// QuickSort dla tablicy MAX->MIN 
-						cout << "Tablice posortowana max->min za pomoca OuickSort (tablice*)" << endl;
+						cout << "Tablice posortowana max->min za pomoca MergeSort (tablice*)" << endl;
 						for (int i = 0; i < ROZMIAR; i++){
-						_backQuickSort(Array[i], size, proc);
+						_backMergeSort(Array[i], 0, size-1);
 						}
 						cout << "Tablice zostaly wstepnie posortowane by stworzyc najgorszy przypadek (nierosnaco)" << endl;
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
