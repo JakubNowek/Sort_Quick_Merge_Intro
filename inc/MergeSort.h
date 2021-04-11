@@ -81,7 +81,7 @@ void Merge(std::vector<E>& in, std::vector<E>& out, int b, int m) {
 	int e2 = std::min(b + 2 * m, n); // koniec drugiego podzbioru
 	int k = b;
 	while ((i < e1) && (j < e2)) {
-		if (!(in[j] <= in[i])) // przy³¹cz mniejszy do S
+		if (!(in[j] <= in[i])) // przy³¹cz mniejszy do S   < oznacza sortowanie rosn¹ce, > sortowanie malej¹ce
 		{
 			out[k++] = in[i++];
 		}

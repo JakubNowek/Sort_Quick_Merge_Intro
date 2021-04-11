@@ -37,11 +37,13 @@ int main()
 	cout << endl << endl << "Witaj kliencie sortowni!" << endl;
 	while (choice_1[0] != '0')  /*Poczatek pierwszego switcha*/
 	{
-	
-		cout << "\nJakiego sortowanie Cie interesuje ? :" << endl;
+		
+		cout << "\n Aktualna dlugosc tablicy: " << size << endl;
+		cout << "Jakiego sortowanie Cie interesuje ? :" << endl;
 		cout << "  1 - QuickSort  " << endl;
 		cout << "  2 - MergeSort  " << endl;
 		cout << "  3 - IntroSort  " << endl;
+		cout << "  4 - Chce zmienic dlugosc tablicy  " << endl;
 		cout << "  0 - Wypusc mnie!!!! " << endl;
 		cout << "Twoj wybor: ";
 		cin >> choice_1[0];
@@ -545,6 +547,12 @@ int main()
 				choice_3[0] = ' ';
 			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
+
+			case '4': cout << "Podaj dlugosc tablicy: ";
+				cin >> size;
+				cout << endl;
+			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
+				break;
 
 			/*Kończenie programu*/
 			case '0':  cout << endl << "Ewakuacja" << endl;
