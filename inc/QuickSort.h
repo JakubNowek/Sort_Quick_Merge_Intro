@@ -148,7 +148,7 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b) {
 template <typename E> // quick-sort S
 void QuickSort(E* S, int size, double proc) {
 	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
-	QuickSortStep(S, 0, (size-1) * (proc / 100)); // wywo³anie sortowania
+	QuickSortStep(S, 0, (int) ((size-1) * (proc / 100))); // wywo³anie sortowania
 }
 
 
@@ -156,19 +156,19 @@ template <typename E>
 void QuickSortStep(E* S, int a, int b) {
 	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
 	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
-	int l = a; // wybranie pierwszego elementu wektora jako indeksu do iteracji
+	int l = a; // wybranie pierwszego elementu tablicy jako indeksu do iteracji
 	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
 	while (l <= r) {
-		while (l <= r && (S[l] <= pivot)) l++; // skanowanie wektora od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ 
+		while (l <= r && (S[l] <= pivot)) l++; // skanowanie tablicy od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ 
 											   // jeœli mamy > to sortuje malej¹co, jeœli <  to rosn¹co
-		while (r >= l && (S[r] >= pivot)) r--; // skanowanie wektora od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
+		while (r >= l && (S[r] >= pivot)) r--; // skanowanie tablicy od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
 											   // jeœli mamy < to sortuje malej¹co, jeœli >  to rosn¹co
 		if (l < r) // oba elementy znalezione
 			Exchange(S,l,r);
 	} // pêtla wykonuje siê, dopóki indeksy l i r nie zamieni¹ siê stronami wzglêdem œrodka wektora
 	Exchange(S,l,b); // przechowaj piwot w elemncie o indeksie l
-	QuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku wektora
-	QuickSortStep(S, l + 1, b); // rekurencja od koñca wektora
+	QuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku tablicy
+	QuickSortStep(S, l + 1, b); // rekurencja od koñca tablicy
 }
 
 

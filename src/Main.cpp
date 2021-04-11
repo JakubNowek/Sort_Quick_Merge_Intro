@@ -548,6 +548,7 @@ int main()
 			choice_2[0] = ' '; /*czyszczenie wyboru użytkownika*/
 			break;
 
+			/*Zmiana długości tablicy*/
 			case '4': cout << "Podaj dlugosc tablicy: ";
 				cin >> size;
 				cout << endl;
