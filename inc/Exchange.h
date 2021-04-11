@@ -22,7 +22,6 @@ template <class Type>
 void Exchange(Type* Array1, Type* Array2, int size);
 
 
-
 template <class Type>
 void Exchange(Type* Array, long i, long j)
 {

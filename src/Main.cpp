@@ -27,7 +27,7 @@ int main()
 	int** Array = new int* [ROZMIAR]; // rezerwowanie miejsca na tablicę wskaźników o ilości wierszy ROZMIAR
 	//TabFill(Array, size);			  // wypełnianie tablicy
 	//Display(Array, size);
-	cout << endl << endl;
+	//cout << endl << endl;
 
 
 	/*Menu*/

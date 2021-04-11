@@ -148,7 +148,7 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b) {
 template <typename E> // quick-sort S
 void QuickSort(E* S, int size, double proc) {
 	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
-	QuickSortStep(S, 0, (int) ((size-1) * (proc / 100))); // wywo³anie sortowania
+	QuickSortStep(S, 0, (int) ((size-1) * (proc / 100) ) ); // wywo³anie sortowania
 }
 
 
