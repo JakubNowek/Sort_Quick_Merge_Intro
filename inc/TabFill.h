@@ -31,7 +31,7 @@ void TabFill(SType** Array, int Size);
 
 template< typename SType>
 void  TabFill(std::vector<SType> toFill[], int Size) {
-	std::cout << "Wylosowano " << ROZMIAR << " tablic " << Size <<" wersowych."<< std::endl;
+	std::cout << "Wylosowano " << ROZMIAR << " tablic " << Size <<" elementowych."<< std::endl;
 	srand(time(NULL)); /*Funkcja inicjalizuj¹ca funkcjê rand(), przy ka¿dym uruchomieniu programu uzyskujemy inn¹ sekwencjê liczb losowych*/
 	
 	/*czyszczenie wektora*/
@@ -53,7 +53,7 @@ void  TabFill(std::vector<SType> toFill[], int Size) {
 
 template <typename SType>
 void TabFill(SType** Array, int Size) {
-	std::cout << "Wylosowano " << ROZMIAR << " tablic " << Size << " wersowych." << std::endl;
+	std::cout << "Wylosowano " << ROZMIAR << " tablic " << Size << " elementowych." << std::endl;
 	srand((SType)time(NULL));			/*Funkcja inicjalizuj¹ca funkcjê rand(), przy ka¿dym uruchomieniu programu uzyskujemy inn¹ sekwencjê liczb losowych*/
 	for (int i = 0; i < ROZMIAR; i++)
 	{

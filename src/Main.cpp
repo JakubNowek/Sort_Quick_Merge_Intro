@@ -95,7 +95,7 @@ int main()
 											/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 											SortCheck(tab);
 										break;
-										case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
+										case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych (0% ; 100%]:  ";
 											cin >> proc; cout << endl;
 											/* zapelnianie wektorow funkcja TabFill */
 											TabFill(tab,size);
@@ -190,7 +190,7 @@ int main()
 										/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 										SortCheck(Array, size);
 										break;
-									case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
+									case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych (0% ; 100%]:  ";
 										cin >> proc; cout << endl; // wczytwanie wartości procentowego posortowania
 										/* zapelnianie tablic funkcja TabFill */
 										TabFill(Array, size);
@@ -303,7 +303,7 @@ int main()
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 							SortCheck(tab);
 							break;
-						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
+						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych (0% ; 100%]:  ";
 							cin >> proc; cout << endl;
 							/* zapelnianie wektorow funkcja TabFill */
 							TabFill(tab, size);
@@ -390,7 +390,7 @@ int main()
 							/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 							SortCheck(Array, size);
 							break;
-						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
+						case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych (0% ; 100%]:  ";
 							cin >> proc; cout << endl;
 							/* zapelnianie tablic funkcja TabFill */
 							TabFill(Array, size);
@@ -489,7 +489,7 @@ int main()
 						/* sprawdzenie poprawnosci sortowania funkcja sortcheck */
 						SortCheck(Array, size);
 						break;
-					case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych [1%-100%]:  ";
+					case '2': cout << "Podaj ile elementow tabel w '%' ma byc wczesniej posortowanych (0% ; 100%]:  ";
 						cin >> proc; cout << endl;
 						/* zapelnianie tablic funkcja TabFill */
 						TabFill(Array, size);
