@@ -167,7 +167,6 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b) {
 //void QuickSortStep(E* S, int a, int b) {
 //	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
 //	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
-//	//std::cout << "aaaaaaaaac:  "<< pivot << std::endl;
 //	int l = a; // wybranie pierwszego elementu tablicy jako indeksu do iteracji
 //	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
 //	while (l <= r) {
