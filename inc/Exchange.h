@@ -1,5 +1,5 @@
 #pragma once
-
+#include<iostream>
 
 /**
  * @brief funkcja odpoiadaj¹ca za zamianê dwóch elementów tablicy dynamicznej 

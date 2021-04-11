@@ -182,7 +182,8 @@ int main()
 										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
 										czas_0 = clock();
 										for (int i = 0; i < ROZMIAR; i++){
-										QuickSort(Array[i], size, proc);
+										//QuickSort(Array[i], size, proc);
+											QuickSort(Array[i], 0, size);
 										}
 										czas_k = clock()-czas_0;
 										cout << endl << "Czas trwania sortowania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
@@ -208,7 +209,8 @@ int main()
 										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
 										czas_0 = clock();
 										for (int i = 0; i < ROZMIAR; i++){
-										QuickSort(Array[i], size, proc);
+											//QuickSort(Array[i], size, proc);
+											QuickSort(Array[i], 0, size);
 										}
 										czas_k = clock()-czas_0;
 										cout << endl << "Czas trwania tablicowego: " << czas_k/CLOCKS_PER_SEC <<" sekund. "<< endl;
@@ -234,7 +236,8 @@ int main()
 										cout << "Tablice posortowana min->max za pomoca OuickSort (tablice*)" << endl;
 										czas_0 = clock();
 										for (int i = 0; i < ROZMIAR; i++) {
-											QuickSort(Array[i], size, proc);
+											//QuickSort(Array[i], size, proc);
+											QuickSort(Array[i], 0, size);
 										}
 										czas_k = clock() - czas_0;
 										cout << endl << "Czas trwania tablicowego: " << czas_k / CLOCKS_PER_SEC << " sekund. " << endl;

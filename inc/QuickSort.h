@@ -50,45 +50,56 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b);
 
 /* Tablice */
 /**
- * @brief funkcja wywo³uj¹ca algorytm quicksort sortuj¹cy tablicê lub czêœæ tablicy
- * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
- * @param S - tablica do posortowania
- * @param size - zmienna przechowuj¹ca rozmiar tablicy do sortowania
- * @param proc - iloœæ pocz¹tkowych elementów, wyra¿ona w %, która ma zosta posortowana
-*/
-template <typename E> // quick-sort S
-void QuickSort(E* S, int size, double proc);
-
-/**
+ * algorytm zosta³ wziêty ze strony http://algorytmy.ency.pl/artykul/quicksort i przet³umaczony na jêzyk angielski dla jednolitoœci
  * @brief funkcja realizuj¹ca algorytm quicksort sortuj¹cy tablicê
  * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
  * @param S - tablica dynamiczna do posortowania
- * @param a - zmienna przechowaj¹ca indeks pierwszego elementu tablicy któr¹ sortujemy
- * @param b - zmienna przechowaj¹ca indeks ostatniego elementu tablicy któr¹ sortujemy
+ * @param pivot - zmienna przechowuj¹ca indeks pierwszego elementu tablicy dynamicznej, przyjêta jako klucz sortowania
+ * @param n - zmienna przechowuj¹ca rozmiar tablicy dynamicznej
 */
 template <typename E>
-void QuickSortStep(E* S, int a, int b);
+void QuickSort(E* S, int pivot, int n);
 
-/**
- * max->min
- * @brief funkcja pomocnicza wywo³uj¹ca algorytm quicksort sortuj¹cy tablicê lub czêœæ tablicy w kolejnosci malej¹cej
- * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
- * @param S - tablica dynamiczna do posortowania
- * @param proc - iloœæ pocz¹tkowych elementów, wyra¿ona w %, która ma zostaæ posortowana
-*/
-template <typename E> // quick-sort S
-void _backQuickSort(E* S, int size, double proc);
 
-/**
- * @brief funkcja pomocnicza realizuj¹ca algorytm quicksort sortuj¹cy teblicê
- * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
- * @param S - tablica dynamiczna do posortowania
- * @param a - zmienna przechowaj¹ca indeks pierwszego elementu tablicy który sortujemy
- * @param b - zmienna przechowaj¹ca indeks ostatniego elementu tablicy który sortujemy
-*/
-template <typename E>
-void _backQuickSortStep(E* S, int a, int b);
-
+///**
+// * @brief funkcja wywo³uj¹ca algorytm quicksort sortuj¹cy tablicê lub czêœæ tablicy
+// * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+// * @param S - tablica do posortowania
+// * @param size - zmienna przechowuj¹ca rozmiar tablicy do sortowania
+// * @param proc - iloœæ pocz¹tkowych elementów, wyra¿ona w %, która ma zosta posortowana
+//*/
+//template <typename E> // quick-sort S
+//void QuickSort(E* S, int size, double proc);
+//
+///**
+// * @brief funkcja realizuj¹ca algorytm quicksort sortuj¹cy tablicê
+// * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+// * @param S - tablica dynamiczna do posortowania
+// * @param a - zmienna przechowaj¹ca indeks pierwszego elementu tablicy któr¹ sortujemy
+// * @param b - zmienna przechowaj¹ca indeks ostatniego elementu tablicy któr¹ sortujemy
+//*/
+//template <typename E>
+//void QuickSortStep(E* S, int a, int b);
+//
+///**
+// * max->min
+// * @brief funkcja pomocnicza wywo³uj¹ca algorytm quicksort sortuj¹cy tablicê lub czêœæ tablicy w kolejnosci malej¹cej
+// * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+// * @param S - tablica dynamiczna do posortowania
+// * @param proc - iloœæ pocz¹tkowych elementów, wyra¿ona w %, która ma zostaæ posortowana
+//*/
+//template <typename E> // quick-sort S
+//void _backQuickSort(E* S, int size, double proc);
+//
+///**
+// * @brief funkcja pomocnicza realizuj¹ca algorytm quicksort sortuj¹cy teblicê
+// * @tparam E - typ zmiennej umo¿liwiaj¹cy wstawianie dowolnego liczbowego typu danych
+// * @param S - tablica dynamiczna do posortowania
+// * @param a - zmienna przechowaj¹ca indeks pierwszego elementu tablicy który sortujemy
+// * @param b - zmienna przechowaj¹ca indeks ostatniego elementu tablicy który sortujemy
+//*/
+//template <typename E>
+//void _backQuickSortStep(E* S, int a, int b);
 
 /*rozwiniêcia nag³ówków funkcji*/
 
@@ -145,56 +156,97 @@ void _backQuickSortStep(std::vector<E>& S, int a, int b) {
 }
 
 
-template <typename E> // quick-sort S
-void QuickSort(E* S, int size, double proc) {
-	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
-	QuickSortStep(S, 0, (int) ((size-1) * (proc / 100) ) ); // wywo³anie sortowania
-}
+//template <typename E> // quick-sort S
+//void QuickSort(E* S, int size, double proc) {
+//	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
+//	QuickSortStep(S, 0, (int) ((size-1) * (proc / 100) ) ); // wywo³anie sortowania
+//}
+//
+//
+//template <typename E>
+//void QuickSortStep(E* S, int a, int b) {
+//	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
+//	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
+//	//std::cout << "aaaaaaaaac:  "<< pivot << std::endl;
+//	int l = a; // wybranie pierwszego elementu tablicy jako indeksu do iteracji
+//	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
+//	while (l <= r) {
+//		while (l <= r && (S[l] <= pivot)) l++; // skanowanie tablicy od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ 
+//											   // jeœli mamy > to sortuje malej¹co, jeœli <  to rosn¹co
+//		while (r >= l && (S[r] >= pivot)) r--; // skanowanie tablicy od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
+//											   // jeœli mamy < to sortuje malej¹co, jeœli >  to rosn¹co
+//		if (l < r) // oba elementy znalezione
+//			Exchange(S,l,r);
+//	} // pêtla wykonuje siê, dopóki indeksy l i r nie zamieni¹ siê stronami wzglêdem œrodka wektora
+//	Exchange(S,l,b); // przechowaj piwot w elemncie o indeksie l
+//	QuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku tablicy
+//	QuickSortStep(S, l + 1, b); // rekurencja od koñca tablicy
+//}
+//
+//
+//
+//template <typename E> // quick-sort S
+//void _backQuickSort(E* S, int size, double proc) {
+//	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
+//	_backQuickSortStep(S, 0, (size-1) * (proc / 100)); // wywo³anie sortowania
+//}
+//
+//
+//template <typename E>
+//void _backQuickSortStep(E* S, int a, int b) {
+//	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
+//	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
+//	int l = a; // wybranie pierwszego elementu wektora jako indeksu do iteracji
+//	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
+//	while (l <= r) {
+//		while (l <= r && (S[l] >= pivot)) l++; // skanowanie wektora od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ,
+//											   // jeœli mamy > to sortuje malej¹co, jeœli <  to rosn¹co
+//		while (r >= l && (S[r] <= pivot)) r--; // skanowanie wektora od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
+//											   // jeœli mamy < to sortuje malej¹co, jeœli >  to rosn¹co
+//		if (l < r) // oba elementy znalezione
+//			Exchange(S,l,r);
+//	} // pêtla wykonuje siê, dopóki indeksy l i r nie zamieni¹ siê stronami wzglêdem œrodka wektora
+//	Exchange(S,l,b); // przechowaj piwot w elemncie o indeksie l
+//	_backQuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku wektora
+//	_backQuickSortStep(S, l + 1, b); // rekurencja od koñca wektora
+//}
 
 
 template <typename E>
-void QuickSortStep(E* S, int a, int b) {
-	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
-	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
-	int l = a; // wybranie pierwszego elementu tablicy jako indeksu do iteracji
-	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
-	while (l <= r) {
-		while (l <= r && (S[l] <= pivot)) l++; // skanowanie tablicy od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ 
-											   // jeœli mamy > to sortuje malej¹co, jeœli <  to rosn¹co
-		while (r >= l && (S[r] >= pivot)) r--; // skanowanie tablicy od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
-											   // jeœli mamy < to sortuje malej¹co, jeœli >  to rosn¹co
-		if (l < r) // oba elementy znalezione
-			Exchange(S,l,r);
-	} // pêtla wykonuje siê, dopóki indeksy l i r nie zamieni¹ siê stronami wzglêdem œrodka wektora
-	Exchange(S,l,b); // przechowaj piwot w elemncie o indeksie l
-	QuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku tablicy
-	QuickSortStep(S, l + 1, b); // rekurencja od koñca tablicy
-}
+void QuickSort(E* S, int pivot, int n) {
+    if (n > 1){
+        int smaller_count = 0;
+        int larger_count = 0;
 
+        E end = pivot + n;
+        int t; // Zmienna tymczasowa
 
+        // Przeniesienie elementow wokol klucza osiowego
+        for (int i = (pivot + 1); i < end; ++i){
 
-template <typename E> // quick-sort S
-void _backQuickSort(E* S, int size, double proc) {
-	if (size <= 1) return; // jeœli jest tylko jeden element, zakoñcz sortowanie
-	_backQuickSortStep(S, 0, (size-1) * (proc / 100)); // wywo³anie sortowania
-}
+            if (S[i] < S[pivot]) {
+                if (larger_count > 0) {
+                    // Przeniesienie elementu mniejszego od klucza osiowego
+                    // przed elementy wieksze od klucza osiowego
+                    t = S[pivot + smaller_count + 1];
+                    S[pivot + smaller_count + 1] = S[i];
+                    S[i] = t;
+                }
+                ++smaller_count;
+            }
+            else {
+                ++larger_count;
+            }
 
+        }
+        // Wstawienie klucza osiowego na wlasciwe miejsce
+        t = S[pivot + smaller_count];
+        S[pivot + smaller_count] = S[pivot];
+        S[pivot] = t;
 
-template <typename E>
-void _backQuickSortStep(E* S, int a, int b) {
-	if (a >= b) return; // jeœli zorta³ jeden lub 0 elementów, zakoñcz sortowanie
-	E pivot = S[b]; // wybranie ostatniego elementu jako pivot
-	int l = a; // wybranie pierwszego elementu wektora jako indeksu do iteracji
-	int r = b - 1; // wybranie przedostatniego elementu wektora jako indesu do iteracji
-	while (l <= r) {
-		while (l <= r && (S[l] >= pivot)) l++; // skanowanie wektora od pocz¹tku, dopóki nie zostanie napotkana wiêksza wartoœæ,
-											   // jeœli mamy > to sortuje malej¹co, jeœli <  to rosn¹co
-		while (r >= l && (S[r] <= pivot)) r--; // skanowanie wektora od koñca, dopóki nie zostanie napotkana mniejsza wartoœæ
-											   // jeœli mamy < to sortuje malej¹co, jeœli >  to rosn¹co
-		if (l < r) // oba elementy znalezione
-			Exchange(S,l,r);
-	} // pêtla wykonuje siê, dopóki indeksy l i r nie zamieni¹ siê stronami wzglêdem œrodka wektora
-	Exchange(S,l,b); // przechowaj piwot w elemncie o indeksie l
-	_backQuickSortStep(S, a, l - 1); // rekurencja od pocz¹tku wektora
-	_backQuickSortStep(S, l + 1, b); // rekurencja od koñca wektora
+        // Wywo³anie rekurencyjne
+        QuickSort(S, pivot, smaller_count);
+        QuickSort(S, end - larger_count, larger_count);
+
+    }
 }
