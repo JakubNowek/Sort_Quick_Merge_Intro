@@ -10,7 +10,7 @@ int main()
 	using std::endl;
 	using std::cin;
 
-	cout << "SORTOWANKO" << endl; //powitanie
+	cout << "SORTOWANKO" ; //powitanie
 	int size = 1000; //rozmiar tablicy (ilość kolumn)
 	double proc = 100;	 // procent posortowania tablicy
 	double czas_0 = 0, czas_k = 0; //zmienne pomocnicze wykorzystywane do obliczaniu czasu działania algorytmu
