@@ -3,7 +3,7 @@ Program zosta³stworzony za pomoc¹ narzêdzia CMake, jako projekt CMake w VisualSt
 
 Aby uruchomic program bez srodowiska programistycznego, uruchom plik Main.exe (na przyklad poprzez klikniecie) 
 
-Aby uruchomic program za pomoca CMake, skompiluj wszystkie pliki za pomoc¹ CMake. Utworzony zostanie program Main.exe, ktory nalezy nastepnie uruchomic.
+Aby uruchomic program za pomoca CMake, skompiluj wszystkie pliki za pomoca CMake. Utworzony zostanie program Main.exe, ktory nalezy nastepnie uruchomic.
 
 ## Algorytmy sortowania 
 * Szybkie - QuickSort, na tablicach i wektorach
