@@ -10,8 +10,8 @@ int main()
 	using std::endl;
 	using std::cin;
 
-	cout << "SORTOWANKO" ; //powitanie
-	int size = 1000; //rozmiar tablicy (ilość kolumn)
+	cout << "SORTOWANIE" ; //powitanie
+	int size = 50000; //rozmiar tablicy (ilość kolumn)
 	double proc = 100;	 // procent posortowania tablicy
 	double czas_0 = 0, czas_k = 0; //zmienne pomocnicze wykorzystywane do obliczaniu czasu działania algorytmu
 	int need_delete = 0; //zmienna pomocnicza, określająca, czy należy usunąć wersy tablicy dynamicznej. 1 - trzeba usunąć, 2 - nie trzeba usuwać
